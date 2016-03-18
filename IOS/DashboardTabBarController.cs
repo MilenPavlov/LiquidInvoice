@@ -20,7 +20,7 @@ namespace MobileIOS
 			{
 				if (_viewModel != null)
 				{
-					await _viewModel.Start ();
+					
 				}
 			}
 			catch (Exception e)

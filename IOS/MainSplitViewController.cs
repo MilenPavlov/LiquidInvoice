@@ -17,7 +17,7 @@ namespace MobileIOS
 			var detailNavigationController = Storyboard.InstantiateViewController ("DashboardNavigationController") as DashboardNavigationController;
 
 			masterViewController.ViewModel = AppDelegate.DependencyService.Resolve<NavigationMenuViewModel> ();
-			//(detailNavigationController.TopViewController as DashboardViewController).ViewModel = AppDelegate.DependencyService.Resolve<DashboardViewModel> ();
+			(detailNavigationController.TopViewController as DashboardTabBarController).ViewModel = AppDelegate.DependencyService.Resolve<DashboardViewModel> ();
 
 			this.PreferredPrimaryColumnWidthFraction = 0.25f;
 

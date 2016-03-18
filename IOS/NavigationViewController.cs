@@ -56,7 +56,7 @@ namespace MobileIOS
 			if (viewModel is DashboardViewModel)
 			{
 				var detailNavigationController = Storyboard.InstantiateViewController ("DashboardNavigationController") as DashboardNavigationController;
-				//(detailNavigationController.TopViewController as DashboardViewController).ViewModel = (DashboardViewModel)viewModel;
+				(detailNavigationController.TopViewController as DashboardTabBarController).ViewModel = (DashboardViewModel)viewModel;
 				this.ShowDetailViewController (detailNavigationController, this);
 			}
 		}
