@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="24">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="23">
+            <objects>
+                <splitViewController id="24" sceneMemberID="viewController" customClass="MainSplitViewController" storyboardIdentifier="MainSplitViewController" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <toolbarItems/>
+                    <connections>
+                        <segue id="585" destination="417" kind="relationship" relationship="masterViewController"/>
+                        <segue id="777" destination="646" kind="relationship" relationship="detailViewController"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="27" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2328" y="280"/>
+        </scene>
+        <scene sceneID="416">
+            <objects>
+                <viewController id="417" sceneMemberID="viewController" customClass="NavigationViewController" storyboardIdentifier="NavigationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="414"/>
+                        <viewControllerLayoutGuide type="bottom" id="415"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="418">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="610" translatesAutoresizingMaskIntoConstraints="NO" image="Logo">
+                                <rect key="frame" x="5" y="5" width="310" height="100"/>
+                                <constraints>
+                                    <constraint id="614" firstItem="610" firstAttribute="height" constant="100"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="620" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="5" y="110" width="310" height="653"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="621" rowHeight="44">
+                                        <rect key="frame" x="0.0" y="28" width="310" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="621" id="622">
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint id="611" firstItem="418" firstAttribute="trailing" secondItem="610" secondAttribute="trailing" constant="5"/>
+                            <constraint id="612" firstItem="610" firstAttribute="top" secondItem="418" secondAttribute="top" constant="5"/>
+                            <constraint id="613" firstItem="610" firstAttribute="leading" secondItem="418" secondAttribute="leading" constant="5"/>
+                            <constraint id="627" firstItem="620" firstAttribute="top" secondItem="610" secondAttribute="bottom" constant="5"/>
+                            <constraint id="628" firstItem="620" firstAttribute="leading" secondItem="418" secondAttribute="leading" constant="5"/>
+                            <constraint id="629" firstItem="418" firstAttribute="bottom" secondItem="620" secondAttribute="bottom" constant="5"/>
+                            <constraint id="630" firstItem="418" firstAttribute="trailing" secondItem="620" secondAttribute="trailing" constant="5"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="LogoImageView" destination="610" id="name-outlet-610"/>
+                        <outlet property="NavigationTableView" destination="620" id="name-outlet-620"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="419" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1093" y="-312"/>
+        </scene>
+        <scene sceneID="645">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="646" sceneMemberID="viewController" customClass="DashboardNavigationController" storyboardIdentifier="DashboardNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="649">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="1062" destination="835" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="650" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1129" y="710"/>
+        </scene>
+        <scene sceneID="790">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="791" sceneMemberID="viewController" customClass="NewInvoiceNavigationController" storyboardIdentifier="NewInvoiceNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="794">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="793" kind="relationship" relationship="rootViewController" id="792"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="795" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-654" y="-221"/>
+        </scene>
+        <scene sceneID="796">
+            <objects>
+                <viewController id="793" sceneMemberID="viewController" customClass="NewInvoiceViewController" storyboardIdentifier="NewInvoiceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="788"/>
+                        <viewControllerLayoutGuide type="bottom" id="789"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="798">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Invoice" id="797"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="799" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="470" y="-246"/>
+        </scene>
+        <scene sceneID="834">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="835" sceneMemberID="viewController" customClass="DashboardTabBarController" storyboardIdentifier="DashboardTabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="840">
+                        <rect key="frame" x="0.0" y="719" width="1024" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="837" kind="relationship" relationship="viewControllers" id="836"/>
+                        <segue destination="839" kind="relationship" relationship="viewControllers" id="838"/>
+                    </connections>
+                    <navigationItem title="Dashboard" id="1061" key="navigationItem"/>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="841" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46" y="720"/>
+        </scene>
+        <scene sceneID="842">
+            <objects>
+                <viewController id="837" sceneMemberID="viewController" customClass="OutstandingInvoiceViewController" storyboardIdentifier="OutstandingInvoiceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="830"/>
+                        <viewControllerLayoutGuide type="bottom" id="831"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="843">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="5" sectionFooterHeight="28" id="1073" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="63" y="75" width="911" height="643"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1074" rowHeight="105" customClass="OutstandingTableViewCell">
+                                        <rect key="frame" x="0.0" y="5" width="911" height="105"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1074" id="1075">
+                                            <rect key="frame" x="0.0" y="0.0" width="911" height="104.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint id="1080" firstItem="1073" firstAttribute="top" secondItem="843" secondAttribute="top" constant="75"/>
+                            <constraint id="1081" firstItem="843" firstAttribute="trailing" secondItem="1073" secondAttribute="trailing" constant="50"/>
+                            <constraint id="1082" firstItem="1073" firstAttribute="leading" secondItem="843" secondAttribute="leading" constant="63"/>
+                            <constraint id="1083" firstItem="843" firstAttribute="bottom" secondItem="1073" secondAttribute="bottom" constant="50"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Outstanding" id="844"/>
+                    <connections>
+                        <outlet property="OutstandingTableView" destination="1073" id="name-outlet-1073"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="845" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="225"/>
+        </scene>
+        <scene sceneID="846">
+            <objects>
+                <viewController id="839" sceneMemberID="viewController" customClass="RecentlyViewedViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="832"/>
+                        <viewControllerLayoutGuide type="bottom" id="833"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="847">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Recently Viewed" id="848"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="849" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1366" y="1393"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="iPad"/>
+        <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
+    </simulatedMetricsContainer>
+    <resources>
+        <image name="Logo" width="808" height="279"/>
+    </resources>
+</document>

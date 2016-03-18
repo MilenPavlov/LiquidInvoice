@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{8B42201D-0501-42BA-845B-235B038713C2}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MobileIOS</RootNamespace>
+    <AssemblyName>MobileIOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386</MtouchArch>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386</MtouchArch>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Logo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Logo.imageset\Logo-Web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\Logo.imageset\" />
+    <Folder Include="AdditionalStoryboards\" />
+    <Folder Include="PlatformDependentServices\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="AdditionalStoryboards\Reports.storyboard" />
+    <InterfaceDefinition Include="AdditionalStoryboards\ExistingInvoice.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationViewController.cs" />
+    <Compile Include="NavigationViewController.designer.cs">
+      <DependentUpon>NavigationViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainSplitViewController.cs" />
+    <Compile Include="MainSplitViewController.designer.cs">
+      <DependentUpon>MainSplitViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardNavigationController.cs" />
+    <Compile Include="DashboardNavigationController.designer.cs">
+      <DependentUpon>DashboardNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewInvoiceNavigationController.cs" />
+    <Compile Include="NewInvoiceNavigationController.designer.cs">
+      <DependentUpon>NewInvoiceNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewInvoiceViewController.cs" />
+    <Compile Include="NewInvoiceViewController.designer.cs">
+      <DependentUpon>NewInvoiceViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsNavigationController.cs" />
+    <Compile Include="ReportsNavigationController.designer.cs">
+      <DependentUpon>ReportsNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportMenuViewController.cs" />
+    <Compile Include="ReportMenuViewController.designer.cs">
+      <DependentUpon>ReportMenuViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExistingInvoiceNavigationController.cs" />
+    <Compile Include="ExistingInvoiceNavigationController.designer.cs">
+      <DependentUpon>ExistingInvoiceNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExistingInvoiceMenuViewController.cs" />
+    <Compile Include="ExistingInvoiceMenuViewController.designer.cs">
+      <DependentUpon>ExistingInvoiceMenuViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlatformDependentServices\IosSqliteFileReaderRepository.cs" />
+    <Compile Include="DashboardTabBarController.cs" />
+    <Compile Include="DashboardTabBarController.designer.cs">
+      <DependentUpon>DashboardTabBarController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecentlyViewedViewController.cs" />
+    <Compile Include="RecentlyViewedViewController.designer.cs">
+      <DependentUpon>RecentlyViewedViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OutstandingInvoiceViewController.cs" />
+    <Compile Include="OutstandingInvoiceViewController.designer.cs">
+      <DependentUpon>OutstandingInvoiceViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OutstandingTableViewCell.cs" />
+    <Compile Include="OutstandingTableViewCell.designer.cs">
+      <DependentUpon>OutstandingTableViewCell.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{34CECA69-7C6E-4EC9-982A-61477BD42979}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{4D913D37-DAFC-4EB5-95DB-560F539DC36B}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModels\ViewModels.csproj">
+      <Project>{5152446D-6952-4A66-AC05-99A62DDB9552}</Project>
+      <Name>ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LiquidInvoice.sqlite" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>
