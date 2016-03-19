@@ -11,11 +11,8 @@ using UIKit;
 
 namespace MobileIOS
 {
-    [Register ("ExistingInvoiceViewController")]
-    partial class ExistingInvoiceMenuViewController
+    [Register ("ExistingInvoiceMenuViewControlle")]
+    partial class ExistingInvoiceMenuViewControlle
     {
-        void ReleaseDesignerOutlets ()
-        {
-        }
     }
 }

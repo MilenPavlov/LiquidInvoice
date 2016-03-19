@@ -36,6 +36,7 @@
     <Compile Include="Resource.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="RepositoryResultCode.cs" />
+    <Compile Include="Invoice.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLitePCL.raw">

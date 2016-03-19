@@ -27,15 +27,15 @@ namespace ViewModels
 			_customers = await _customerService.GetAllCustomers ().ConfigureAwait(false);
 		}
 
-		public void NavigateToDashboard ()
+		public void NavigateToExistingInvoiceMenu ()
 		{
 			if (ViewModelNavigationRequested != null)
 			{
-				IApplicationViewModel viewModel = _dependencyService.Resolve<DashboardViewModel> ();
-
+				IApplicationViewModel viewModel = _dependencyService.Resolve<ExistingInvoiceMenuViewModel> ();
 				ViewModelNavigationRequested (viewModel);
 			}
 		}
+
 	}
 }
 

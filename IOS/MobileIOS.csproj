@@ -83,18 +83,35 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="SDWebImage">
+      <HintPath>..\packages\Xamarin.SDWebImage.3.7.5\lib\Xamarin.iOS\SDWebImage.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism">
+      <HintPath>..\packages\Prism.Core.6.1.0\lib\Xamarin.iOS10\Prism.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Logo.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Logo.imageset\Logo-Web.png" />
+    <ImageAsset Include="Assets.xcassets\Gears.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Gears.imageset\Gears.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\dad %281%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\dad %282%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\dad %283%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\rsz_dad.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\rsz_1dad.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Assets.xcassets\Logo.imageset\" />
     <Folder Include="AdditionalStoryboards\" />
     <Folder Include="PlatformDependentServices\" />
+    <Folder Include="NavigationControllers\" />
+    <Folder Include="ViewControllers\" />
+    <Folder Include="TableViewCells\" />
+    <Folder Include="Assets.xcassets\Gears.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -105,66 +122,63 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NavigationViewController.cs" />
-    <Compile Include="NavigationViewController.designer.cs">
-      <DependentUpon>NavigationViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainSplitViewController.cs" />
-    <Compile Include="MainSplitViewController.designer.cs">
-      <DependentUpon>MainSplitViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DashboardNavigationController.cs" />
-    <Compile Include="DashboardNavigationController.designer.cs">
+    <Compile Include="PlatformDependentServices\IosSqliteFileReaderRepository.cs" />
+    <Compile Include="NavigationControllers\DashboardNavigationController.cs" />
+    <Compile Include="NavigationControllers\DashboardNavigationController.designer.cs">
       <DependentUpon>DashboardNavigationController.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewInvoiceNavigationController.cs" />
-    <Compile Include="NewInvoiceNavigationController.designer.cs">
-      <DependentUpon>NewInvoiceNavigationController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NewInvoiceViewController.cs" />
-    <Compile Include="NewInvoiceViewController.designer.cs">
-      <DependentUpon>NewInvoiceViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ReportsNavigationController.cs" />
-    <Compile Include="ReportsNavigationController.designer.cs">
-      <DependentUpon>ReportsNavigationController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ReportMenuViewController.cs" />
-    <Compile Include="ReportMenuViewController.designer.cs">
-      <DependentUpon>ReportMenuViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ExistingInvoiceNavigationController.cs" />
-    <Compile Include="ExistingInvoiceNavigationController.designer.cs">
+    <Compile Include="NavigationControllers\ExistingInvoiceNavigationController.cs" />
+    <Compile Include="NavigationControllers\ExistingInvoiceNavigationController.designer.cs">
       <DependentUpon>ExistingInvoiceNavigationController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExistingInvoiceMenuViewController.cs" />
-    <Compile Include="ExistingInvoiceMenuViewController.designer.cs">
-      <DependentUpon>ExistingInvoiceMenuViewController.cs</DependentUpon>
+    <Compile Include="NavigationControllers\NewInvoiceNavigationController.cs" />
+    <Compile Include="NavigationControllers\NewInvoiceNavigationController.designer.cs">
+      <DependentUpon>NewInvoiceNavigationController.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlatformDependentServices\IosSqliteFileReaderRepository.cs" />
-    <Compile Include="DashboardTabBarController.cs" />
-    <Compile Include="DashboardTabBarController.designer.cs">
+    <Compile Include="NavigationControllers\ReportsNavigationController.cs" />
+    <Compile Include="NavigationControllers\ReportsNavigationController.designer.cs">
+      <DependentUpon>ReportsNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\DashboardTabBarController.cs" />
+    <Compile Include="ViewControllers\DashboardTabBarController.designer.cs">
       <DependentUpon>DashboardTabBarController.cs</DependentUpon>
     </Compile>
-    <Compile Include="RecentlyViewedViewController.cs" />
-    <Compile Include="RecentlyViewedViewController.designer.cs">
-      <DependentUpon>RecentlyViewedViewController.cs</DependentUpon>
+    <Compile Include="ViewControllers\MainSplitViewController.cs" />
+    <Compile Include="ViewControllers\MainSplitViewController.designer.cs">
+      <DependentUpon>MainSplitViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="OutstandingInvoiceViewController.cs" />
-    <Compile Include="OutstandingInvoiceViewController.designer.cs">
+    <Compile Include="ViewControllers\NavigationViewController.cs" />
+    <Compile Include="ViewControllers\NavigationViewController.designer.cs">
+      <DependentUpon>NavigationViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\NewInvoiceViewController.cs" />
+    <Compile Include="ViewControllers\NewInvoiceViewController.designer.cs">
+      <DependentUpon>NewInvoiceViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\OutstandingInvoiceViewController.cs" />
+    <Compile Include="ViewControllers\OutstandingInvoiceViewController.designer.cs">
       <DependentUpon>OutstandingInvoiceViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="OutstandingTableViewCell.cs" />
-    <Compile Include="OutstandingTableViewCell.designer.cs">
+    <Compile Include="ViewControllers\RecentlyViewedViewController.cs" />
+    <Compile Include="ViewControllers\RecentlyViewedViewController.designer.cs">
+      <DependentUpon>RecentlyViewedViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ReportMenuViewController.cs" />
+    <Compile Include="ViewControllers\ReportMenuViewController.designer.cs">
+      <DependentUpon>ReportMenuViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableViewCells\OutstandingTableViewCell.cs" />
+    <Compile Include="TableViewCells\OutstandingTableViewCell.designer.cs">
       <DependentUpon>OutstandingTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExistingInvoiceMenuViewControlle.cs" />
+    <Compile Include="ExistingInvoiceMenuViewControlle.designer.cs">
+      <DependentUpon>ExistingInvoiceMenuViewControlle.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +193,10 @@
     <ProjectReference Include="..\ViewModels\ViewModels.csproj">
       <Project>{5152446D-6952-4A66-AC05-99A62DDB9552}</Project>
       <Name>ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+      <Project>{23938CDF-D5EA-4E0D-8FE3-4BBB1A6BFED3}</Project>
+      <Name>ClassLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
