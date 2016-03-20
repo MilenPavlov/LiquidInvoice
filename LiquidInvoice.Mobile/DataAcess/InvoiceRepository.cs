@@ -9,7 +9,6 @@ namespace DataAccess
 	{
 		public InvoiceRepository (ISqliteConnectionService context) : base (context)
 		{
-			context.Instance.ExecuteAsync ("Update Invoice Set DueDate = ", DateTime.Now);
 		}
 	}
 }

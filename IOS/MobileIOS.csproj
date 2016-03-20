@@ -182,25 +182,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
-      <Project>{34CECA69-7C6E-4EC9-982A-61477BD42979}</Project>
-      <Name>Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Services\Services.csproj">
-      <Project>{4D913D37-DAFC-4EB5-95DB-560F539DC36B}</Project>
-      <Name>Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ViewModels\ViewModels.csproj">
-      <Project>{5152446D-6952-4A66-AC05-99A62DDB9552}</Project>
-      <Name>ViewModels</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+    <BundleResource Include="Resources\LiquidInvoice.sqlite" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LiquidInvoice.Mobile\ClassLibrary\ClassLibrary.csproj">
       <Project>{23938CDF-D5EA-4E0D-8FE3-4BBB1A6BFED3}</Project>
       <Name>ClassLibrary</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\LiquidInvoice.sqlite" />
+    <ProjectReference Include="..\LiquidInvoice.Mobile\Interfaces\Interfaces.csproj">
+      <Project>{34CECA69-7C6E-4EC9-982A-61477BD42979}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiquidInvoice.Mobile\Services\Services.csproj">
+      <Project>{4D913D37-DAFC-4EB5-95DB-560F539DC36B}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiquidInvoice.Mobile\ViewModels\ViewModels.csproj">
+      <Project>{5152446D-6952-4A66-AC05-99A62DDB9552}</Project>
+      <Name>ViewModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\SQLitePCL.raw.0.8.6\build\Xamarin.iOS10\SQLitePCL.raw.targets" Condition="Exists('..\packages\SQLitePCL.raw.0.8.6\build\Xamarin.iOS10\SQLitePCL.raw.targets')" />

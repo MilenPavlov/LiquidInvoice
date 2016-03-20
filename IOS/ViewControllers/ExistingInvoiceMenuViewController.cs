@@ -20,10 +20,11 @@ namespace MobileIOS
 		{
 			if (_viewModel != null)
 			{
+				_existingInvoiceTableView.TableFooterView = new UIView ();
+
 				await _viewModel.Start ();
 
 				_existingInvoiceTableView.RowHeight = 95;
-				_existingInvoiceTableView.TableFooterView = new UIView ();
 				_existingInvoiceTableView.Source = new ExistingInvoiceMenuTableViewSource (_viewModel.Invoices);
 			}
 		}
