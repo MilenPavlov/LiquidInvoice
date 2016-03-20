@@ -1,0 +1,11 @@
+/Users/jasonf/Documents/LiquidInvoice/Services/obj/Release/.NETPortable,Version=v4.5,Profile=Profile78.AssemblyAttribute.cs
+/Users/jasonf/Documents/LiquidInvoice/Services/bin/Release/Services.dll
+/Users/jasonf/Documents/LiquidInvoice/Services/obj/Release/Services.dll
+/Users/jasonf/Documents/LiquidInvoice/Services/bin/Release/Microsoft.Practices.ServiceLocation.dll
+/Users/jasonf/Documents/LiquidInvoice/Services/bin/Release/Microsoft.Practices.Unity.dll
+/Users/jasonf/Documents/LiquidInvoice/Services/bin/Release/Prism.dll
+/Users/jasonf/Documents/LiquidInvoice/Services/bin/Release/SQLitePCL.raw.dll
+/Users/jasonf/Documents/LiquidInvoice/Services/bin/Release/SQLite-net.dll
+/Users/jasonf/Documents/LiquidInvoice/Services/bin/Release/Interfaces.dll
+/Users/jasonf/Documents/LiquidInvoice/Services/bin/Release/DataAcess.dll
+/Users/jasonf/Documents/LiquidInvoice/Services/bin/Release/ClassLibrary.dll
