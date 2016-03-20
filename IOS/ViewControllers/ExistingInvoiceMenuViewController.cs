@@ -2,6 +2,9 @@ using Foundation;
 using System;
 using UIKit;
 using ViewModels;
+using System.Collections.Generic;
+using ClassLibrary;
+using System.Linq;
 
 namespace MobileIOS
 {
@@ -18,6 +21,10 @@ namespace MobileIOS
 			if (_viewModel != null)
 			{
 				await _viewModel.Start ();
+
+				_existingInvoiceTableView.RowHeight = 95;
+				_existingInvoiceTableView.TableFooterView = new UIView ();
+				_existingInvoiceTableView.Source = new ExistingInvoiceMenuTableViewSource (_viewModel.Invoices);
 			}
 		}
 
@@ -32,6 +39,27 @@ namespace MobileIOS
 				_viewModel = value;
 			}
 		}
-
     }
+
+	public class ExistingInvoiceMenuTableViewSource : UITableViewSource
+	{
+		IEnumerable<InvoiceDto> _invoices;
+
+		public ExistingInvoiceMenuTableViewSource (IEnumerable<InvoiceDto> invoices)
+		{
+			_invoices = invoices;
+		}
+
+		public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
+		{
+			var cell = tableView.DequeueReusableCell ("InvoiceTableViewCell") as InvoiceTableViewCell;
+			cell.UpdateCell (_invoices.ElementAt (indexPath.Row));
+			return cell;
+		}
+
+		public override nint RowsInSection (UITableView tableview, nint section)
+		{
+			return _invoices.Count ();
+		}
+	}
 }

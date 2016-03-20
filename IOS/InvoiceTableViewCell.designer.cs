@@ -28,6 +28,10 @@ namespace MobileIOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel _companyNameLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel _dueDateLabel { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -45,6 +49,11 @@ namespace MobileIOS
             if (_companyLogoImageView != null) {
                 _companyLogoImageView.Dispose ();
                 _companyLogoImageView = null;
+            }
+
+            if (_companyNameLabel != null) {
+                _companyNameLabel.Dispose ();
+                _companyNameLabel = null;
             }
 
             if (_dueDateLabel != null) {

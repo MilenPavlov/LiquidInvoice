@@ -24,6 +24,14 @@ namespace ViewModels
 			var invoices = await _invoiceService.GetAllInvoices ().ConfigureAwait (false);
 			_invoices = invoices.ToList ();
 		}
+
+		public List<InvoiceDto> Invoices
+		{
+			get
+			{
+				return _invoices;
+			}
+		}
 	}
 }
 

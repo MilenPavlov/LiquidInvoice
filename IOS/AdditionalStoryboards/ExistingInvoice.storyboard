@@ -35,7 +35,7 @@
                                 <rect key="frame" x="10" y="74" width="580" height="516"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="19" rowHeight="95" customClass="InvoiceTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="19" rowHeight="95" customClass="InvoiceTableViewCell" reuseIdentifier="InvoiceTableViewCell">
                                         <rect key="frame" x="0.0" y="1" width="580" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="19" id="20">
@@ -104,6 +104,7 @@
                                             <outlet property="_dueDateLabel" destination="46" id="name-outlet-46"/>
                                             <outlet property="_amountDueLabel" destination="47" id="name-outlet-47"/>
                                             <outlet property="_accountNumberLabel" destination="48" id="name-outlet-48"/>
+                                            <outlet property="_companyNameLabel" destination="42" id="name-outlet-42"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -128,5 +129,6 @@
     </scenes>
     <resources>
         <image name="Logo" width="808" height="279"/>
+        <image name="Gears" width="42" height="36"/>
     </resources>
 </document>
