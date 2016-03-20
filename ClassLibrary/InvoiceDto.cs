@@ -1,9 +1,7 @@
 ﻿using System;
-using SQLite;
-
 namespace ClassLibrary
 {
-	public class Invoice : Resource
+	public class InvoiceDto
 	{
 		public int CompanyId { get; set; }
 
@@ -12,6 +10,10 @@ namespace ClassLibrary
 		public decimal AmountDue { get; set; }
 
 		public DateTime DueDate { get; set; }
+
+		public Company Company { get; set; }
+
+		public Customer Customer { get; set; }
 	}
 }
 

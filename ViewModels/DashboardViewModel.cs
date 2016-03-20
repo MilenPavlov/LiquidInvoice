@@ -16,9 +16,8 @@ namespace ViewModels
 
 		public event ViewModelNavigationRequestHandler ViewModelNavigationRequested;
 
-		public Task Start ()
+		public async Task Start ()
 		{
-			throw new NotImplementedException ();
 		}
 	}
 }
