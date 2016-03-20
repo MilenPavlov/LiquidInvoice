@@ -22,9 +22,10 @@ namespace MobileIOS
 				// call back method
 				(image, error, cacheType, imageUrl) => {
 
+				// no need to set image on callback method, this is handled automatically
 					if (error != null)
 					{
-						int a = 0;
+						Console.WriteLine (error);
 					}
 			});
 

@@ -63,13 +63,13 @@
       <Project>{34CECA69-7C6E-4EC9-982A-61477BD42979}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAcess\DataAcess.csproj">
-      <Project>{49AD42F6-2101-44EF-A7B6-AA0B18010A35}</Project>
-      <Name>DataAcess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
       <Project>{23938CDF-D5EA-4E0D-8FE3-4BBB1A6BFED3}</Project>
       <Name>ClassLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAcess\DataAccess.csproj">
+      <Project>{49AD42F6-2101-44EF-A7B6-AA0B18010A35}</Project>
+      <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

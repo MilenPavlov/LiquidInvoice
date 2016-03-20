@@ -3,7 +3,7 @@ using ClassLibrary;
 using DataAccess;
 using Interfaces;
 
-namespace DataAcess
+namespace DataAccess
 {
 	public class CompanyRepository : BaseRepository<Company>, ICompanyRepository
 	{

@@ -6,7 +6,7 @@ using ClassLibrary;
 using DataAccess;
 using Interfaces;
 
-namespace DataAcess
+namespace DataAccess
 {
 	public class CustomerRepository : BaseRepository<Customer>, ICustomerRepository
 	{
