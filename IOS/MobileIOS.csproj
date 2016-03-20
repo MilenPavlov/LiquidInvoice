@@ -169,6 +169,10 @@
     <Compile Include="NavigationControllers\ExistingInvoiceNavigationController.designer.cs">
       <DependentUpon>ExistingInvoiceNavigationController.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceTableViewCell.cs" />
+    <Compile Include="InvoiceTableViewCell.designer.cs">
+      <DependentUpon>InvoiceTableViewCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
@@ -182,6 +186,10 @@
     <ProjectReference Include="..\ViewModels\ViewModels.csproj">
       <Project>{5152446D-6952-4A66-AC05-99A62DDB9552}</Project>
       <Name>ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+      <Project>{23938CDF-D5EA-4E0D-8FE3-4BBB1A6BFED3}</Project>
+      <Name>ClassLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
