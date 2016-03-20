@@ -36,6 +36,7 @@
     <Compile Include="DependencyService.cs" />
     <Compile Include="SqliteConnectionService.cs" />
     <Compile Include="CustomerService.cs" />
+    <Compile Include="InvoiceService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation">

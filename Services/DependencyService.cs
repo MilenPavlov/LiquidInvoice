@@ -25,10 +25,10 @@ namespace Services
 			_dependencyContainer.RegisterType<ISqliteConnectionService, SqliteConnectionService> ();
 			_dependencyContainer.RegisterType<ICustomerRepository, CustomerRepository> ();
 			_dependencyContainer.RegisterType<ICustomerService, CustomerService> ();
+			_dependencyContainer.RegisterType<IInvoiceRepository, InvoiceRepository> ();
+			_dependencyContainer.RegisterType<ICompanyRepository, CompanyRepository> ();
+			_dependencyContainer.RegisterType<IInvoiceService, InvoiceService> ();
 		}
-
-
-
 
 		public T Resolve<T>()
 		{
@@ -37,9 +37,9 @@ namespace Services
 
 		}
 
-		public void RegisterInstance<T>(T implementation)
+		public void RegisterInstance<T>(T instance)
 		{
-			_dependencyContainer.RegisterInstance<T>(implementation);
+			_dependencyContainer.RegisterInstance<T>(instance);
 		}
 
 		public void RegisterType<T, T1>() where T1 : T

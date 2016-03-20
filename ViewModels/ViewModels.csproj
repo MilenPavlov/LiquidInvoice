@@ -34,10 +34,10 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NavigationMenuViewModel.cs" />
-    <Compile Include="DashboardViewModel.cs" />
     <Compile Include="NewInvoiceViewModel.cs" />
     <Compile Include="ExistingInvoiceMenuViewModel.cs" />
     <Compile Include="ReportsMenuViewModel.cs" />
+    <Compile Include="OutstandingInvoiceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
