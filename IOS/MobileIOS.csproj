@@ -121,14 +121,6 @@
     <Compile Include="NavigationControllers\DashboardNavigationController.designer.cs">
       <DependentUpon>DashboardNavigationController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\ExistingInvoiceMenuViewController.cs" />
-    <Compile Include="ViewControllers\ExistingInvoiceMenuViewController.designer.cs">
-      <DependentUpon>ExistingInvoiceMenuViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NavigationControllers\ExistingInvoiceNavigationController.cs" />
-    <Compile Include="NavigationControllers\ExistingInvoiceNavigationController.designer.cs">
-      <DependentUpon>ExistingInvoiceNavigationController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\MainSplitViewController.cs" />
     <Compile Include="ViewControllers\MainSplitViewController.designer.cs">
       <DependentUpon>MainSplitViewController.cs</DependentUpon>
@@ -164,6 +156,14 @@
     <Compile Include="NavigationControllers\ReportsNavigationController.cs" />
     <Compile Include="NavigationControllers\ReportsNavigationController.designer.cs">
       <DependentUpon>ReportsNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ExistingInvoiceMenuViewController.cs" />
+    <Compile Include="ViewControllers\ExistingInvoiceMenuViewController.designer.cs">
+      <DependentUpon>ExistingInvoiceMenuViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationControllers\ExistingInvoiceNavigationController.cs" />
+    <Compile Include="NavigationControllers\ExistingInvoiceNavigationController.designer.cs">
+      <DependentUpon>ExistingInvoiceNavigationController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

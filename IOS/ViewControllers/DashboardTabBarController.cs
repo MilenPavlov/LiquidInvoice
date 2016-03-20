@@ -7,7 +7,6 @@ namespace MobileIOS
 {
     public partial class DashboardTabBarController : UITabBarController
     {
-		private DashboardViewModel _viewModel;
 
         public DashboardTabBarController (IntPtr handle) : base (handle)
         {
@@ -18,26 +17,10 @@ namespace MobileIOS
 		{
 			try
 			{
-				if (_viewModel != null)
-				{
-					await _viewModel.Start ();
-				}
+				
 			}
 			catch (Exception e)
 			{
-			}
-		}
-
-
-		public DashboardViewModel ViewModel
-		{
-			get
-			{
-				return _viewModel;
-			}
-			set
-			{
-				_viewModel = value;
 			}
 		}
     }

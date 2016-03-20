@@ -23,7 +23,7 @@ namespace MobileIOS
 
 			LogoImageView.UserInteractionEnabled = true;
 			LogoImageView.AddGestureRecognizer (new UITapGestureRecognizer (() => { 
-				_viewModel.NavigateToDashboard ();
+				NavigateToDashboard ();
 
 				foreach (var index in NavigationTableView.IndexPathsForVisibleRows)
 				{
@@ -53,12 +53,12 @@ namespace MobileIOS
 
 		private void OnNavigationRequested (IApplicationViewModel viewModel)
 		{
-			if (viewModel is DashboardViewModel)
-			{
-				var detailNavigationController = Storyboard.InstantiateViewController ("DashboardNavigationController") as DashboardNavigationController;
-				//(detailNavigationController.TopViewController as DashboardViewController).ViewModel = (DashboardViewModel)viewModel;
-				this.ShowDetailViewController (detailNavigationController, this);
-			}
+		}
+
+		private void NavigateToDashboard ()
+		{
+			var detailNavigationController = Storyboard.InstantiateViewController ("DashboardNavigationController") as DashboardNavigationController;
+			this.ShowDetailViewController (detailNavigationController, this);
 		}
 
 		private void NavigateToExistingInvoiceMenu ()
