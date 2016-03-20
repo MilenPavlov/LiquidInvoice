@@ -41,7 +41,7 @@ namespace MobileIOS
 
 				var actions = new List<KeyValuePair<string, Action>> ();
 				actions.Add (new KeyValuePair<string, Action> ("New Invoice", NavigateToNewInvoice));
-				actions.Add (new KeyValuePair<string, Action> ("Existing Invoices", NavigateToExistingInvoiceMenu));
+				actions.Add (new KeyValuePair<string, Action> ("Existing Invoices", _viewModel.NavigateToExistingInvoiceMenu));
 				actions.Add (new KeyValuePair<string, Action> ("Reports", NavigateToReportMenu));
 
 				NavigationTableView.TableFooterView = new UIView ();
@@ -53,19 +53,24 @@ namespace MobileIOS
 
 		private void OnNavigationRequested (IApplicationViewModel viewModel)
 		{
+			if (viewModel is ExistingInvoiceMenuViewModel)
+			{
+				var storyBoard = UIStoryboard.FromName ("ExistingInvoice", null);
+				var navigationController = storyBoard.InstantiateViewController ("ExistingInvoiceNavigationController") 
+				                                     as ExistingInvoiceNavigationController;
+
+				var viewController = navigationController.TopViewController as ExistingInvoiceMenuViewController;
+
+				viewController.ViewModel = viewModel as ExistingInvoiceMenuViewModel;
+
+				this.ShowDetailViewController (navigationController, this);
+			}
 		}
 
 		private void NavigateToDashboard ()
 		{
 			var detailNavigationController = Storyboard.InstantiateViewController ("DashboardNavigationController") as DashboardNavigationController;
 			this.ShowDetailViewController (detailNavigationController, this);
-		}
-
-		private void NavigateToExistingInvoiceMenu ()
-		{
-			var storyBoard = UIStoryboard.FromName ("ExistingInvoice", null);
-			var viewController = storyBoard.InstantiateViewController ("ExistingInvoiceNavigationController");
-			this.ShowDetailViewController (viewController, this);
 		}
 
 

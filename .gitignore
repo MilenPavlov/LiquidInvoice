@@ -26,3 +26,7 @@ IOS/bin/iPhoneSimulator/Debug/MobileIOS.app/AppIcons72x72~ipad.png
 IOS/bin/iPhoneSimulator/Debug/MobileIOS.app/AppIcons76x76@2x~ipad.png
 IOS/bin/iPhoneSimulator/Debug/MobileIOS.app/AppIcons76x76~ipad.png
 IOS/bin/iPhoneSimulator/Debug/MobileIOS.app/AppIcons83.5x83.5@2x~ipad.png
+IOS/bin/iPhoneSimulator/Debug/MobileIOS.app/SQLite-net.dll.mdb
+packages/Xamarin.SDWebImage.3.7.5/Xamarin.SDWebImage.3.7.5.nupkg
+packages/Xamarin.SDWebImage.3.7.5/lib/MonoTouch/SDWebImage.dll
+packages/Xamarin.SDWebImage.3.7.5/lib/Xamarin.iOS/SDWebImage.dll
