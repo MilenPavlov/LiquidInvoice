@@ -44,5 +44,10 @@
 	<string>Assets.xcassets/AppIcons.appiconset</string>
 	<key>CFBundleName</key>
 	<string>MobileInvoice</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

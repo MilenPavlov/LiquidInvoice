@@ -33,14 +33,11 @@ namespace MobileIOS
 
 			string dueDatePrefix = "Due: ";
 			var dueDateText = new NSMutableAttributedString (dueDatePrefix + invoice.DueDate.ToShortDateString());
+			dueDateText.AddAttribute (UIStringAttributeKey.ForegroundColor, UIColor.DarkGray, new NSRange (0, dueDatePrefix.Length));
 
 			if (invoice.DueDate.Date <= DateTime.Now.Date)
 			{
-				dueDateText.AddAttribute (UIStringAttributeKey.ForegroundColor, UIColor.Red, new NSRange (0, dueDatePrefix.Length));
-			}
-			else
-			{
-				dueDateText.AddAttribute (UIStringAttributeKey.ForegroundColor, UIColor.DarkGray, new NSRange (0, dueDatePrefix.Length));
+				dueDateText.AddAttribute (UIStringAttributeKey.ForegroundColor, UIColor.Red, new NSRange (dueDatePrefix.Length, invoice.DueDate.ToShortDateString().Length));
 			}
 
 			_dueDateLabel.AttributedText = dueDateText;

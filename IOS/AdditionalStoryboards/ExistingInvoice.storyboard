@@ -42,22 +42,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="580" height="94.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="37" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="10" y="17.5" width="60" height="60"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="37" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="10" y="17.5" width="90" height="60"/>
                                                     <constraints>
                                                         <constraint id="40" firstItem="37" firstAttribute="height" constant="60"/>
-                                                        <constraint id="41" firstItem="37" firstAttribute="width" constant="60"/>
+                                                        <constraint id="41" firstItem="37" firstAttribute="width" constant="90"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" id="42" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="0" adjustsFontSizeToFit="NO">
-                                                    <rect key="frame" x="90" y="10" width="480" height="20.5"/>
+                                                    <rect key="frame" x="120" y="10" width="450" height="20.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="46" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="90" y="50.5" width="150" height="20.5"/>
+                                                    <rect key="frame" x="120" y="50.5" width="150" height="20.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -67,17 +67,17 @@
                                                     </constraints>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="47" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="255" y="50.5" width="150" height="20.5"/>
+                                                    <rect key="frame" x="285" y="50.5" width="200" height="20.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <constraints>
-                                                        <constraint id="54" firstItem="47" firstAttribute="width" constant="150"/>
+                                                        <constraint id="54" firstItem="47" firstAttribute="width" constant="200"/>
                                                     </constraints>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="48" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="420" y="50.5" width="160" height="20.5"/>
+                                                    <rect key="frame" x="500" y="50.5" width="80" height="20.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
