@@ -5,6 +5,8 @@ namespace ClassLibrary
 {
 	public class Invoice : Resource
 	{
+		public int InvoiceTypeId { get; set; }
+
 		public int CompanyId { get; set; }
 
 		public int CustomerId { get; set; }

@@ -39,6 +39,8 @@
     <Compile Include="Invoice.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="InvoiceDto.cs" />
+    <Compile Include="InvoiceType.cs" />
+    <Compile Include="LogoPositionType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLitePCL.raw">
