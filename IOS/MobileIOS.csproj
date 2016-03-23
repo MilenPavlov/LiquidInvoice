@@ -176,9 +176,14 @@
     <Compile Include="NavigationControllers\ExistingInvoiceNavigationController.designer.cs">
       <DependentUpon>ExistingInvoiceNavigationController.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvoiceTableViewCell.cs" />
-    <Compile Include="InvoiceTableViewCell.designer.cs">
+    <Compile Include="ViewModelNavigationContainer.cs" />
+    <Compile Include="TableViewCells\InvoiceTableViewCell.cs" />
+    <Compile Include="TableViewCells\InvoiceTableViewCell.designer.cs">
       <DependentUpon>InvoiceTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ExistingInvoiceViewController.cs" />
+    <Compile Include="ViewControllers\ExistingInvoiceViewController.designer.cs">
+      <DependentUpon>ExistingInvoiceViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

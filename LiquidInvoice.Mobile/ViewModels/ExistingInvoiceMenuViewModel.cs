@@ -11,9 +11,11 @@ namespace ViewModels
 	{
 		IInvoiceService _invoiceService;
 		List<InvoiceDto> _invoices;
+		IDependencyService _dependencyService;
 
-		public ExistingInvoiceMenuViewModel (IInvoiceService invoiceService)
+		public ExistingInvoiceMenuViewModel (IInvoiceService invoiceService, IDependencyService dependencyService)
 		{
+			_dependencyService = dependencyService;
 			_invoiceService = invoiceService;
 		}
 
@@ -23,6 +25,18 @@ namespace ViewModels
 		{
 			var invoices = await _invoiceService.GetAllInvoices ().ConfigureAwait (false);
 			_invoices = invoices.ToList ();
+		}
+
+		public void NavigateToInvoice (InvoiceDto invoice)
+		{
+			if (ViewModelNavigationRequested != null)
+			{
+				var viewModel = _dependencyService.Resolve<ExistingInvoiceViewModel> ();
+
+				viewModel.Invoice = invoice;
+
+				ViewModelNavigationRequested (viewModel);
+			}
 		}
 
 		public List<InvoiceDto> Invoices

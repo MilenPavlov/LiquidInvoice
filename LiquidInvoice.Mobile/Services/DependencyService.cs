@@ -28,6 +28,7 @@ namespace Services
 			_dependencyContainer.RegisterType<IInvoiceRepository, InvoiceRepository> ();
 			_dependencyContainer.RegisterType<ICompanyRepository, CompanyRepository> ();
 			_dependencyContainer.RegisterType<IInvoiceService, InvoiceService> ();
+			_dependencyContainer.RegisterType<IInvoiceTypeRepository, InvoiceTypeRepository> ();
 		}
 
 		public T Resolve<T>()

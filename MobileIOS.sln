@@ -5,13 +5,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileIOS", "IOS\MobileIOS.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "LiquidInvoice.Mobile\ClassLibrary\ClassLibrary.csproj", "{23938CDF-D5EA-4E0D-8FE3-4BBB1A6BFED3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "LiquidInvoice.Mobile\DataAcess\DataAccess.csproj", "{49AD42F6-2101-44EF-A7B6-AA0B18010A35}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "LiquidInvoice.Mobile\Interfaces\Interfaces.csproj", "{34CECA69-7C6E-4EC9-982A-61477BD42979}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "LiquidInvoice.Mobile\Services\Services.csproj", "{4D913D37-DAFC-4EB5-95DB-560F539DC36B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels", "LiquidInvoice.Mobile\ViewModels\ViewModels.csproj", "{5152446D-6952-4A66-AC05-99A62DDB9552}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "LiquidInvoice.Mobile\DataAccess\DataAccess.csproj", "{49AD42F6-2101-44EF-A7B6-AA0B18010A35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +37,6 @@ Global
 		{23938CDF-D5EA-4E0D-8FE3-4BBB1A6BFED3}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{23938CDF-D5EA-4E0D-8FE3-4BBB1A6BFED3}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{23938CDF-D5EA-4E0D-8FE3-4BBB1A6BFED3}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Release|iPhone.Build.0 = Release|Any CPU
-		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{34CECA69-7C6E-4EC9-982A-61477BD42979}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
 		{34CECA69-7C6E-4EC9-982A-61477BD42979}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{34CECA69-7C6E-4EC9-982A-61477BD42979}.Release|iPhone.ActiveCfg = Release|Any CPU
@@ -69,5 +61,13 @@ Global
 		{5152446D-6952-4A66-AC05-99A62DDB9552}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{5152446D-6952-4A66-AC05-99A62DDB9552}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{5152446D-6952-4A66-AC05-99A62DDB9552}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Release|iPhone.Build.0 = Release|Any CPU
+		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{49AD42F6-2101-44EF-A7B6-AA0B18010A35}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal

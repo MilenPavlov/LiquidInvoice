@@ -9,7 +9,6 @@ namespace ClassLibrary
 
 		public bool ShowPaymentOptions { get; set; }
 
-		public string PaymentUrl { get; set; }
+		public bool StretchLogo { get; set; }
 	}
 }
-

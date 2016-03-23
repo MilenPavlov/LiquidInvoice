@@ -38,6 +38,8 @@
     <Compile Include="ExistingInvoiceMenuViewModel.cs" />
     <Compile Include="ReportsMenuViewModel.cs" />
     <Compile Include="OutstandingInvoiceViewModel.cs" />
+    <Compile Include="ExistingInvoiceViewModel.cs" />
+    <Compile Include="Events\InvoiceViewedEvent.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
@@ -56,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Events\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

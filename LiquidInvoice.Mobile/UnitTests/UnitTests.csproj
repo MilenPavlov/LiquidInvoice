@@ -68,7 +68,7 @@
       <Project>{23938cdf-d5ea-4e0d-8fe3-4bbb1a6bfed3}</Project>
       <Name>ClassLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAcess\DataAccess.csproj">
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{49ad42f6-2101-44ef-a7b6-aa0b18010a35}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>

@@ -3,7 +3,7 @@ namespace ClassLibrary
 {
 	public enum LogoPositionType
 	{
-		Lift, 
+		Left, 
 		Middle,
 		Right,
 		FullLength

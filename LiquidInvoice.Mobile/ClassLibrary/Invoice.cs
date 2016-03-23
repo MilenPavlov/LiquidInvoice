@@ -14,6 +14,8 @@ namespace ClassLibrary
 		public decimal AmountDue { get; set; }
 
 		public DateTime DueDate { get; set; }
+
+		public string PaymentUrl { get; set; }
 	}
 }
 

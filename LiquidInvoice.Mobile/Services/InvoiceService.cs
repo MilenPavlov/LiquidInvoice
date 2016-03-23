@@ -12,9 +12,11 @@ namespace Services
 		ICustomerRepository _customerRepository;
 		ICompanyRepository _companyRepository;
 		IInvoiceRepository _invoiceRepository;
+		IInvoiceTypeRepository _invoiceTypeRepository;
 
-		public InvoiceService (ICustomerRepository customerRepository, ICompanyRepository companyRepository, IInvoiceRepository invoiceRepository)
+		public InvoiceService (IInvoiceTypeRepository invoiceTypeRepository, ICustomerRepository customerRepository, ICompanyRepository companyRepository, IInvoiceRepository invoiceRepository)
 		{
+			_invoiceTypeRepository = invoiceTypeRepository;
 			_customerRepository = customerRepository;
 			_companyRepository = companyRepository;
 			_invoiceRepository = invoiceRepository;
@@ -27,10 +29,12 @@ namespace Services
 				var customerResult = await _customerRepository.ReadAllEntities ();
 				var companyResult = await _companyRepository.ReadAllEntities ();
 				var invoiceResult = await _invoiceRepository.ReadAllEntities ();
+				var invoiceTypes = await _invoiceTypeRepository.ReadAllEntities ();
 
 				var invoices = from invoice in invoiceResult.ResultData
 							   join customer in customerResult.ResultData on invoice.CustomerId equals customer.Id
 							   join company in companyResult.ResultData on invoice.CompanyId equals company.Id
+							   join invoiceType in invoiceTypes.ResultData on invoice.InvoiceTypeId equals invoiceType.Id
 							   select new InvoiceDto ()
 							   {
 								   AmountDue = invoice.AmountDue,
@@ -38,8 +42,11 @@ namespace Services
 								   Customer = customer,
 								   CompanyId = company.Id,
 								   CustomerId = customer.Id,
-								   DueDate = invoice.DueDate
-								};
+								   DueDate = invoice.DueDate,
+								   InvoiceType = invoiceType
+							   };
+
+				var tmp = invoices.ToList ();
 
 				return invoices;
 			}

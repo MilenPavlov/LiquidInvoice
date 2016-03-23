@@ -11,9 +11,13 @@ namespace ClassLibrary
 
 		public DateTime DueDate { get; set; }
 
+		public string PaymentUrl { get; set; }
+
 		public Company Company { get; set; }
 
 		public Customer Customer { get; set; }
+
+		public InvoiceType InvoiceType { get; set; }
 	}
 }
 

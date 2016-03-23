@@ -42,7 +42,8 @@ namespace MobileIOS
 			// view models and any platform dependent classes will be registered here
 			_dependencyService.RegisterType<NavigationMenuViewModel, NavigationMenuViewModel> ();
 			_dependencyService.RegisterType<OutstandingInvoiceViewModel, OutstandingInvoiceViewModel> ();
-			_dependencyService.RegisterType<ISqliteFileReaderRepository, IosSqliteFileReaderRepository> ();
+			_dependencyService.RegisterType<ExistingInvoiceViewModel, ExistingInvoiceViewModel> ();
+			_dependencyService.RegisterInstance<ISqliteFileReaderRepository> (new IosSqliteFileReaderRepository ());
 
 			return true;
 		}
