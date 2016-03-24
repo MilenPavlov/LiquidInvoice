@@ -141,38 +141,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="912">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QTQ-sm-rAg" image="Logo">
-                                        <rect key="frame" x="33" y="72" width="515" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="QWy-oo-JVY"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="QTQ-sm-rAg" secondAttribute="trailing" constant="8" id="aJq-uz-VX9"/>
-                                    <constraint firstItem="QTQ-sm-rAg" firstAttribute="leading" secondItem="912" secondAttribute="leading" constant="8" id="guC-0m-x51"/>
-                                    <constraint firstItem="QTQ-sm-rAg" firstAttribute="top" secondItem="912" secondAttribute="top" constant="8" id="win-q1-ELf"/>
-                                </constraints>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="912" misplaced="YES">
+                                <rect key="frame" x="0.0" y="270" width="600" height="330"/>
+                                <subviews/>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QTQ-sm-rAg" image="Logo" misplaced="YES">
+                                <rect key="frame" x="11" y="82" width="557" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="QWy-oo-JVY"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="912" firstAttribute="leading" secondItem="67" secondAttribute="leading" id="913"/>
                             <constraint firstAttribute="trailing" secondItem="912" secondAttribute="trailing" id="914"/>
                             <constraint firstAttribute="bottom" secondItem="912" secondAttribute="bottom" id="915"/>
-                            <constraint firstItem="912" firstAttribute="top" secondItem="67" secondAttribute="top" id="916"/>
+                            <constraint id="928" firstItem="912" firstAttribute="top" secondItem="QTQ-sm-rAg" secondAttribute="bottom" constant="10"/>
+                            <constraint id="930" firstItem="67" firstAttribute="trailing" secondItem="QTQ-sm-rAg" secondAttribute="trailing"/>
+                            <constraint id="931" firstItem="QTQ-sm-rAg" firstAttribute="leading" secondItem="67" secondAttribute="leading"/>
+                            <constraint id="938" firstItem="QTQ-sm-rAg" firstAttribute="top" secondItem="63" secondAttribute="bottom"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="_mainScrollView" destination="912" id="name-outlet-912"/>
-                        <outlet property="_logoImageView" destination="QTQ-sm-rAg" id="name-outlet-QTQ-sm-rAg"/>
-                        <outlet property="ImageViewLeft" destination="guC-0m-x51" id="name-outlet-guC-0m-x51"/>
-                        <outlet property="ImageViewTop" destination="win-q1-ELf" id="name-outlet-win-q1-ELf"/>
-                        <outlet property="ImageViewRight" destination="aJq-uz-VX9" id="name-outlet-aJq-uz-VX9"/>
+                        <outlet property="ImageViewLeft" destination="931" id="name-outlet-931"/>
+                        <outlet property="ImageViewRight" destination="930" id="name-outlet-930"/>
                         <outlet property="ImageViewHeight" destination="QWy-oo-JVY" id="name-outlet-QWy-oo-JVY"/>
+                        <outlet property="_logoImageView" destination="QTQ-sm-rAg" id="name-outlet-QTQ-sm-rAg"/>
+                        <outlet property="ImageViewTop" destination="938" id="name-outlet-938"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="68" userLabel="First Responder" sceneMemberID="firstResponder"/>

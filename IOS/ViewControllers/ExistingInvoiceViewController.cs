@@ -29,15 +29,13 @@ namespace MobileIOS
 
 			if (_viewModel != null)
 			{
-				SetImageConstraints (_viewModel.Invoice.InvoiceType.LogoPosition);
+				
 				_logoImageView.Layer.BorderWidth = 1;
 				_logoImageView.Layer.BorderColor = UIColor.Black.CGColor;
 				_mainScrollView.Layer.BorderWidth = 1;
 				_mainScrollView.Layer.BorderColor = UIColor.Black.CGColor;
 
-				var frame = _mainScrollView.ContentSize;
-				frame.Width = this.View.Frame.Width;
-				_mainScrollView.ContentSize = frame;
+
 				_logoImageView.SetImage(new NSUrl(_viewModel.Invoice.Company.LogoUrl));
 
 				if (_viewModel.Invoice.InvoiceType.StretchLogo)
@@ -48,11 +46,15 @@ namespace MobileIOS
 				{
 					_logoImageView.ContentMode = UIViewContentMode.ScaleAspectFit;
 				}
+
+				SetImageConstraints (_viewModel.Invoice.InvoiceType.LogoPosition);
 			}
 		}
 
 		private void SetImageConstraints (LogoPositionType positionType)
 		{
+			nfloat primaryColumnOffset = InterfaceOrientation.IsLandscape () ? SplitViewController.PrimaryColumnWidth : 0;
+
 			switch (positionType)
 			{
 			case LogoPositionType.FullLength:
@@ -65,23 +67,21 @@ namespace MobileIOS
 				ImageViewHeight.Constant = 150;
 				ImageViewTop.Constant = 0;
 				ImageViewLeft.Constant = 0;
-				ImageViewRight.Constant = this.View.Frame.Width * 0.75f;
+				ImageViewRight.Constant = this.View.Frame.Width * 0.75f - primaryColumnOffset;
 				break;
 			case LogoPositionType.Right:
 				ImageViewHeight.Constant = 150;
 				ImageViewTop.Constant = 0;
 				ImageViewRight.Constant = 0;
-				ImageViewLeft.Constant = this.View.Frame.Width * 0.75f;
+				ImageViewLeft.Constant = this.View.Frame.Width * 0.75f - primaryColumnOffset;
 				break;
 			case LogoPositionType.Middle:
 				ImageViewHeight.Constant = 150;
 				ImageViewTop.Constant = 0;
-				ImageViewLeft.Constant = this.View.Frame.Width / 2 - 75;
-				ImageViewRight.Constant = this.View.Frame.Width / 2 - 75;
+				ImageViewLeft.Constant = this.View.Frame.Width / 2 - 75 - primaryColumnOffset;
+				ImageViewRight.Constant = this.View.Frame.Width / 2 - 75 - primaryColumnOffset;
 				break;
 			}
-
-//			_logoImageView.UpdateConstraints ();
 		}
 
 		public ExistingInvoiceViewModel ViewModel
