@@ -20,16 +20,22 @@ namespace MobileIOS
 
 		public async override void ViewDidLoad ()
 		{
+			NavigationTableView.TableFooterView = new UIView ();
 
 			LogoImageView.UserInteractionEnabled = true;
 			LogoImageView.AddGestureRecognizer (new UITapGestureRecognizer (() => { 
 				NavigateToDashboard ();
 
-				foreach (var index in NavigationTableView.IndexPathsForVisibleRows)
+				if (NavigationTableView.IndexPathForSelectedRow != null)
 				{
-					NavigationTableView.DeselectRow (index, true);
+					foreach (var index in NavigationTableView.IndexPathsForVisibleRows)
+					{
+						if (NavigationTableView.IndexPathForSelectedRow.Row == index.Row)
+						{
+							NavigationTableView.DeselectRow (index, true);
+						}
+					}
 				}
-
 			}));
 
 
@@ -44,8 +50,6 @@ namespace MobileIOS
 				actions.Add (new KeyValuePair<string, Action> ("Existing Invoices", _viewModel.NavigateToExistingInvoiceMenu));
 				actions.Add (new KeyValuePair<string, Action> ("Reports", NavigateToReportMenu));
 
-				NavigationTableView.TableFooterView = new UIView ();
-
 				NavigationTableView.Source = new NavigationTableViewSource (actions);
 				NavigationTableView.ReloadData ();
 			}
@@ -56,6 +60,7 @@ namespace MobileIOS
 			if (viewModel is ExistingInvoiceMenuViewModel)
 			{
 				var storyBoard = UIStoryboard.FromName ("ExistingInvoice", null);
+
 				var navigationController = storyBoard.InstantiateViewController ("ExistingInvoiceNavigationController") 
 				                                     as ExistingInvoiceNavigationController;
 

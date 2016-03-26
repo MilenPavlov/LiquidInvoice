@@ -16,6 +16,10 @@ namespace MobileIOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView _companyInfoTextView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView _logoImageView { get; set; }
 
         [Outlet]
@@ -38,8 +42,25 @@ namespace MobileIOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.NSLayoutConstraint ImageViewTop { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView InvoiceItemsTableView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.NSLayoutConstraint TableViewHeight { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.NSLayoutConstraint TableViewWidth { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (_companyInfoTextView != null) {
+                _companyInfoTextView.Dispose ();
+                _companyInfoTextView = null;
+            }
+
             if (_logoImageView != null) {
                 _logoImageView.Dispose ();
                 _logoImageView = null;
@@ -68,6 +89,21 @@ namespace MobileIOS
             if (ImageViewTop != null) {
                 ImageViewTop.Dispose ();
                 ImageViewTop = null;
+            }
+
+            if (InvoiceItemsTableView != null) {
+                InvoiceItemsTableView.Dispose ();
+                InvoiceItemsTableView = null;
+            }
+
+            if (TableViewHeight != null) {
+                TableViewHeight.Dispose ();
+                TableViewHeight = null;
+            }
+
+            if (TableViewWidth != null) {
+                TableViewWidth.Dispose ();
+                TableViewWidth = null;
             }
         }
     }

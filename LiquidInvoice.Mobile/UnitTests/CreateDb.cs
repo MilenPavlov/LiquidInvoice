@@ -37,11 +37,12 @@ namespace UnitTests
             await context.CreateTableAsync<Customer>();
             await context.CreateTableAsync<Company>();
             await context.CreateTableAsync<InvoiceType>();
+            await context.CreateTableAsync<InvoiceItem>();
 
             var companies = new List<Company>() {
                 new Company() {
                     AccountNumber = "107-JA1",
-                    Address = "702 S.W. Eighth St. Bentonville,	Arkansas",
+                    Address = "702 S.W. Eighth St. Bentonville, Arkansas",
                     Name = "Walmart",
                     Id = 1,
                     PhoneNumber = "928-382-5779",
@@ -140,6 +141,60 @@ namespace UnitTests
             };
 
             await context.InsertAllAsync(invoiceTypes);
+
+            var invoiceItemList = new List<InvoiceItem>() {
+                new InvoiceItem() {
+                    InvoiceId = 1,
+                    Id = 1,
+                    ItemName = "Hours Worked",
+                    Quantity = 2.25,
+                    TotalPrice = 125
+                },
+                 new InvoiceItem() {
+                    InvoiceId = 1,
+                    Id = 2,
+                    ItemName = "Delivery Fee",
+                    Quantity = null,
+                    TotalPrice = 109.99m
+                },
+                  new InvoiceItem() {
+                    InvoiceId = 1,
+                    Id = 3,
+                    ItemName = "Parts 1",
+                    Quantity = null,
+                    TotalPrice = 125
+                },
+                  new InvoiceItem() {
+                    InvoiceId = 1,
+                    Id = 4,
+                    ItemName = "Parts 2",
+                    Quantity = null,
+                    TotalPrice = 125
+                },
+                  new InvoiceItem() {
+                    InvoiceId = 1,
+                    Id = 5,
+                    ItemName = "Parts 3",
+                    Quantity = null,
+                    TotalPrice = 125
+                },
+                  new InvoiceItem() {
+                    InvoiceId = 1,
+                    Id = 6,
+                    ItemName = "Parts 4",
+                    Quantity = null,
+                    TotalPrice = 125
+                },
+                  new InvoiceItem() {
+                    InvoiceId = 1,
+                    Id = 7,
+                    ItemName = "Parts 5",
+                    Quantity = null,
+                    TotalPrice = 125
+                }
+            };
+
+            await context.InsertAllAsync(invoiceItemList);
         }
     }
 }

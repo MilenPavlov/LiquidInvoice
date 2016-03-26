@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace ClassLibrary
 {
 	public class InvoiceDto
@@ -18,6 +20,8 @@ namespace ClassLibrary
 		public Customer Customer { get; set; }
 
 		public InvoiceType InvoiceType { get; set; }
+
+		public IEnumerable<InvoiceItem> InvoiceItems { get; set; }
 	}
 }
 

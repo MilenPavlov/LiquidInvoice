@@ -4,6 +4,8 @@ using UIKit;
 using ViewModels;
 using SDWebImage;
 using ClassLibrary;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MobileIOS
 {
@@ -11,15 +13,35 @@ namespace MobileIOS
     {
 		ExistingInvoiceViewModel _viewModel;
 
+		const int RowHeight = 60;
+
         public ExistingInvoiceViewController (IntPtr handle) : base (handle)
         {
         }
 
+		public override void WillRotate (UIInterfaceOrientation toInterfaceOrientation, double duration)
+		{
+			TableViewWidth.Constant = toInterfaceOrientation.IsLandscape() ?  
+				this.View.Frame.Width - SplitViewController.PrimaryColumnWidth - 30: 
+				this.View.Frame.Width - 30;
+		}
+
 		public override void ViewDidLoad ()
 		{
+			base.ViewDidLoad ();
+
 			if (_viewModel != null)
 			{
-				
+				_companyInfoTextView.Text = _viewModel.Invoice.Company.Name + '\n' +
+					_viewModel.Invoice.Company.Address + '\n' +
+					_viewModel.Invoice.Company.PhoneNumber;
+
+				_companyInfoTextView.SizeToFit ();
+
+				InvoiceItemsTableView.RowHeight = RowHeight;
+				InvoiceItemsTableView.UserInteractionEnabled = false;
+
+				InvoiceItemsTableView.Source = new InvoiceItemsTableViewSource (_viewModel.Invoice.InvoiceItems);
 			}
 		}
 
@@ -29,12 +51,16 @@ namespace MobileIOS
 
 			if (_viewModel != null)
 			{
-				
-				_logoImageView.Layer.BorderWidth = 1;
-				_logoImageView.Layer.BorderColor = UIColor.Black.CGColor;
-				_mainScrollView.Layer.BorderWidth = 1;
-				_mainScrollView.Layer.BorderColor = UIColor.Black.CGColor;
+				InvoiceItemsTableView.Layer.BorderColor = UIColor.LightGray.CGColor;
+				InvoiceItemsTableView.Layer.BorderWidth = 1;
+				InvoiceItemsTableView.Layer.CornerRadius = 5;
 
+				TableViewWidth.Constant = InterfaceOrientation.IsLandscape() ?  
+					this.View.Frame.Width - SplitViewController.PrimaryColumnWidth - 30: 
+					this.View.Frame.Width - 30;
+
+
+				TableViewHeight.Constant = RowHeight * _viewModel.Invoice.InvoiceItems.Count ();
 
 				_logoImageView.SetImage(new NSUrl(_viewModel.Invoice.Company.LogoUrl));
 
@@ -96,4 +122,26 @@ namespace MobileIOS
 			}
 		}
     }
+
+	public class InvoiceItemsTableViewSource : UITableViewSource
+	{
+		IEnumerable<InvoiceItem> _items;
+
+		public InvoiceItemsTableViewSource (IEnumerable<InvoiceItem> items)
+		{
+			_items = items;
+		}
+
+		public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
+		{
+			var cell = tableView.DequeueReusableCell ("InvoiceItemTableViewCell") as InvoiceItemTableViewCell;
+			cell.UpdateCell (_items.ElementAt (indexPath.Row));
+			return cell;
+		}
+
+		public override nint RowsInSection (UITableView tableview, nint section)
+		{
+			return _items.Count ();
+		}
+	}
 }

@@ -41,6 +41,7 @@
     <Compile Include="InvoiceDto.cs" />
     <Compile Include="InvoiceType.cs" />
     <Compile Include="LogoPositionType.cs" />
+    <Compile Include="InvoiceItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLitePCL.raw">

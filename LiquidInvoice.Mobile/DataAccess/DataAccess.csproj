@@ -41,6 +41,7 @@
     <Compile Include="CompanyRepository.cs" />
     <Compile Include="SqliteFileReaderRepository.cs" />
     <Compile Include="InvoiceTypeRepository.cs" />
+    <Compile Include="InvoiceItemRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLitePCL.raw">

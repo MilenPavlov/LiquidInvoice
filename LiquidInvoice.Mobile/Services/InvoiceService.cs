@@ -13,9 +13,16 @@ namespace Services
 		ICompanyRepository _companyRepository;
 		IInvoiceRepository _invoiceRepository;
 		IInvoiceTypeRepository _invoiceTypeRepository;
+		IInvoiceItemRepository _invoiceItemRepository;
 
-		public InvoiceService (IInvoiceTypeRepository invoiceTypeRepository, ICustomerRepository customerRepository, ICompanyRepository companyRepository, IInvoiceRepository invoiceRepository)
+		public InvoiceService (
+			IInvoiceTypeRepository invoiceTypeRepository,
+			ICustomerRepository customerRepository, 
+			ICompanyRepository companyRepository, 
+			IInvoiceRepository invoiceRepository,
+			IInvoiceItemRepository invoiceItemRepository)
 		{
+			_invoiceItemRepository = invoiceItemRepository;
 			_invoiceTypeRepository = invoiceTypeRepository;
 			_customerRepository = customerRepository;
 			_companyRepository = companyRepository;
@@ -30,6 +37,7 @@ namespace Services
 				var companyResult = await _companyRepository.ReadAllEntities ();
 				var invoiceResult = await _invoiceRepository.ReadAllEntities ();
 				var invoiceTypes = await _invoiceTypeRepository.ReadAllEntities ();
+				var invoiceItems = await _invoiceItemRepository.ReadAllEntities ();
 
 				var invoices = from invoice in invoiceResult.ResultData
 							   join customer in customerResult.ResultData on invoice.CustomerId equals customer.Id
@@ -43,10 +51,9 @@ namespace Services
 								   CompanyId = company.Id,
 								   CustomerId = customer.Id,
 								   DueDate = invoice.DueDate,
-								   InvoiceType = invoiceType
+								   InvoiceType = invoiceType,
+									InvoiceItems = invoiceItems.ResultData.Where(ii => ii.InvoiceId == invoice.Id)
 							   };
-
-				var tmp = invoices.ToList ();
 
 				return invoices;
 			}
