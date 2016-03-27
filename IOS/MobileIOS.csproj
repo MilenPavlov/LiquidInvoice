@@ -151,21 +151,9 @@
     <Compile Include="ViewControllers\NewInvoiceViewController.designer.cs">
       <DependentUpon>NewInvoiceViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\OutstandingInvoiceViewController.cs" />
-    <Compile Include="ViewControllers\OutstandingInvoiceViewController.designer.cs">
-      <DependentUpon>OutstandingInvoiceViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TableViewCells\OutstandingTableViewCell.cs" />
-    <Compile Include="TableViewCells\OutstandingTableViewCell.designer.cs">
-      <DependentUpon>OutstandingTableViewCell.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\ReportMenuViewController.cs" />
     <Compile Include="ViewControllers\ReportMenuViewController.designer.cs">
       <DependentUpon>ReportMenuViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\RecentlyViewedViewController.cs" />
-    <Compile Include="ViewControllers\RecentlyViewedViewController.designer.cs">
-      <DependentUpon>RecentlyViewedViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="NavigationControllers\ReportsNavigationController.cs" />
     <Compile Include="NavigationControllers\ReportsNavigationController.designer.cs">

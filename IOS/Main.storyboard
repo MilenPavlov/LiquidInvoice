@@ -128,133 +128,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="837" kind="relationship" relationship="viewControllers" id="836"/>
-                        <segue destination="839" kind="relationship" relationship="viewControllers" id="838"/>
-                    </connections>
+                    <connections/>
                     <navigationItem title="Dashboard" id="1061" key="navigationItem"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="841" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="46" y="720"/>
-        </scene>
-        <scene sceneID="842">
-            <objects>
-                <viewController id="837" sceneMemberID="viewController" customClass="OutstandingInvoiceViewController" storyboardIdentifier="OutstandingInvoiceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="830"/>
-                        <viewControllerLayoutGuide type="bottom" id="831"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="843">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="5" sectionFooterHeight="28" id="1073" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="63" y="90" width="911" height="628"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1074" rowHeight="90" customClass="OutstandingTableViewCell" reuseIdentifier="OutstandingTableViewCell">
-                                        <rect key="frame" x="0.0" y="5" width="911" height="90"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1074" id="1075">
-                                            <rect key="frame" x="0.0" y="0.0" width="911" height="89.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Company" lineBreakMode="tailTruncation" minimumFontSize="10" id="1094" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="80" y="10" width="904" height="25"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <constraints>
-                                                        <constraint id="1103" firstItem="1094" firstAttribute="height" constant="25"/>
-                                                    </constraints>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1095" translatesAutoresizingMaskIntoConstraints="NO" image="Gears" misplaced="YES">
-                                                    <rect key="frame" x="10" y="22.5" width="50" height="50"/>
-                                                    <constraints>
-                                                        <constraint id="1096" firstItem="1095" firstAttribute="height" constant="50"/>
-                                                        <constraint id="1097" firstItem="1095" firstAttribute="width" constant="50"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Due: " lineBreakMode="tailTruncation" minimumFontSize="10" id="1104" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="80" y="45" width="148" height="20.5"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <constraints>
-                                                        <constraint id="1105" firstItem="1104" firstAttribute="width" constant="148"/>
-                                                    </constraints>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Amount:" lineBreakMode="tailTruncation" minimumFontSize="10" id="1108" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="300" y="45" width="200" height="21"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <constraints>
-                                                        <constraint id="1111" firstItem="1108" firstAttribute="width" constant="200"/>
-                                                    </constraints>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint id="1098" firstItem="1095" firstAttribute="centerY" secondItem="1075" secondAttribute="centerY"/>
-                                                <constraint id="1099" firstItem="1095" firstAttribute="leading" secondItem="1075" secondAttribute="leading" constant="10"/>
-                                                <constraint id="1100" firstItem="1094" firstAttribute="top" secondItem="1075" secondAttribute="top" constant="10"/>
-                                                <constraint id="1101" firstItem="1094" firstAttribute="leading" secondItem="1095" secondAttribute="trailing" constant="20"/>
-                                                <constraint id="1102" firstItem="1075" firstAttribute="trailing" secondItem="1094" secondAttribute="trailing" constant="20"/>
-                                                <constraint id="1106" firstItem="1104" firstAttribute="leading" secondItem="1095" secondAttribute="trailing" constant="20"/>
-                                                <constraint id="1107" firstItem="1104" firstAttribute="top" secondItem="1094" secondAttribute="bottom" constant="10"/>
-                                                <constraint id="1109" firstItem="1108" firstAttribute="leading" secondItem="1104" secondAttribute="trailing" constant="72"/>
-                                                <constraint id="1110" firstItem="1108" firstAttribute="top" secondItem="1094" secondAttribute="bottom" constant="10"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="_companyName" destination="1094" id="name-outlet-1094"/>
-                                            <outlet property="_companyLogoImage" destination="1095" id="name-outlet-1095"/>
-                                            <outlet property="_date" destination="1104" id="name-outlet-1104"/>
-                                            <outlet property="_amountDue" destination="1108" id="name-outlet-1108"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <constraints>
-                            <constraint id="1080" firstItem="1073" firstAttribute="top" secondItem="843" secondAttribute="top" constant="10"/>
-                            <constraint id="1081" firstItem="843" firstAttribute="trailing" secondItem="1073" secondAttribute="trailing" constant="10"/>
-                            <constraint id="1082" firstItem="1073" firstAttribute="leading" secondItem="843" secondAttribute="leading" constant="10"/>
-                            <constraint id="1083" firstItem="843" firstAttribute="bottom" secondItem="1073" secondAttribute="bottom" constant="50"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Outstanding" id="844"/>
-                    <connections>
-                        <outlet property="OutstandingTableView" destination="1073" id="name-outlet-1073"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="845" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1836" y="225"/>
-        </scene>
-        <scene sceneID="846">
-            <objects>
-                <viewController id="839" sceneMemberID="viewController" customClass="RecentlyViewedViewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="832"/>
-                        <viewControllerLayoutGuide type="bottom" id="833"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="847">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Recently Viewed" id="848"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="849" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1366" y="1393"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -264,5 +144,6 @@
     <resources>
         <image name="Logo" width="808" height="279"/>
         <image name="Gears" width="42" height="36"/>
+        <image name="BackgroundBlue" width="2560" height="1440"/>
     </resources>
 </document>
