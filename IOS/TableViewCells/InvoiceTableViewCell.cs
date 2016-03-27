@@ -14,20 +14,8 @@ namespace MobileIOS
 
 		public void UpdateCell (InvoiceDto invoice)
 		{
-			_companyLogoImageView.SetImage (
-				// url for image
-				new NSUrl (invoice.Company.LogoUrl), 
-				// placeholder
-				UIImage.FromBundle ("Gears"), 
-				// call back method
-				(image, error, cacheType, imageUrl) => {
-
-				// no need to set image on callback method, this is handled automatically
-					if (error != null)
-					{
-						Console.WriteLine (error);
-					}
-			});
+			_companyLogoImageView.SetImage (new NSUrl (invoice.Company.LogoUrl));
+				
 
 			_companyNameLabel.Text = invoice.Company.Name;
 

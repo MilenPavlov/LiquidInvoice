@@ -189,6 +189,10 @@
     <Compile Include="InvoiceItemTableViewCell.designer.cs">
       <DependentUpon>InvoiceItemTableViewCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceTotalTableViewCell.cs" />
+    <Compile Include="InvoiceTotalTableViewCell.designer.cs">
+      <DependentUpon>InvoiceTotalTableViewCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\LiquidInvoice.sqlite" />

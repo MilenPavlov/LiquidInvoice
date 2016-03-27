@@ -11,6 +11,8 @@ namespace ClassLibrary
 
 		public int CustomerId { get; set; }
 
+		public double TaxPercentage { get; set; }
+
 		public decimal AmountDue { get; set; }
 
 		public DateTime DueDate { get; set; }

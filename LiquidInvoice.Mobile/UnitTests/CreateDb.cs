@@ -99,6 +99,7 @@ namespace UnitTests
                     InvoiceTypeId = 1,
                     AmountDue = 3934.23m,
                     CompanyId = 1,
+                    TaxPercentage = 0.07,
                     CustomerId = 1,
                     DueDate = DateTime.Now,
                     Id = 1
@@ -107,6 +108,7 @@ namespace UnitTests
                     InvoiceTypeId = 2,
                     AmountDue = 12304.23m,
                     CompanyId = 2,
+                    TaxPercentage = 0.07,
                     CustomerId = 2,
                     DueDate = DateTime.Now.AddDays(5),
                     Id = 2
@@ -115,6 +117,7 @@ namespace UnitTests
                      InvoiceTypeId = 2,
                     AmountDue = 879.96m,
                     CompanyId = 3,
+                    TaxPercentage = 0.07,
                     CustomerId = 3,
                     DueDate = DateTime.Now.AddDays(-5),
                     Id = 3

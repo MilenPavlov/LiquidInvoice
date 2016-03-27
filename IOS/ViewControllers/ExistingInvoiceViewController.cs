@@ -6,6 +6,8 @@ using SDWebImage;
 using ClassLibrary;
 using System.Collections.Generic;
 using System.Linq;
+using CoreAnimation;
+using CoreGraphics;
 
 namespace MobileIOS
 {
@@ -13,7 +15,7 @@ namespace MobileIOS
     {
 		ExistingInvoiceViewModel _viewModel;
 
-		const int RowHeight = 60;
+		const int RowHeight = 50;
 
         public ExistingInvoiceViewController (IntPtr handle) : base (handle)
         {
@@ -26,20 +28,47 @@ namespace MobileIOS
 				this.View.Frame.Width - 30;
 		}
 
-		public override void ViewDidLoad ()
+		public async override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
 			if (_viewModel != null)
 			{
+
+				await _viewModel.Start ();
+
 				_companyInfoTextView.Text = _viewModel.Invoice.Company.Name + '\n' +
-					_viewModel.Invoice.Company.Address + '\n' +
-					_viewModel.Invoice.Company.PhoneNumber;
+					_viewModel.Invoice.Company.Address + ' ' + _viewModel.Invoice.Company.PhoneNumber;
 
 				InvoiceItemsTableView.RowHeight = RowHeight;
 				InvoiceItemsTableView.UserInteractionEnabled = false;
 				InvoiceItemsTableView.TableFooterView = new UIView ();
 				InvoiceItemsTableView.Source = new InvoiceItemsTableViewSource (_viewModel.Invoice.InvoiceItems);
+
+				var values = new List<KeyValuePair<string, decimal>> () {
+					new KeyValuePair<string, decimal>("Sub Total: ", _viewModel.Invoice.AmountDue),
+					new KeyValuePair<string, decimal>("Tax: ", _viewModel.Invoice.AmountDue * Convert.ToDecimal(_viewModel.Invoice.TaxPercentage)),
+					new KeyValuePair<string, decimal>("Total: ",_viewModel.Invoice.AmountDue * Convert.ToDecimal(_viewModel.Invoice.TaxPercentage) + _viewModel.Invoice.AmountDue)
+				};
+
+				_dueDateLabel.Text = "Due: " + _viewModel.Invoice.DueDate.ToShortDateString ();
+				_dueDateLabel.TextAlignment = UITextAlignment.Right;
+
+				_notes.Text = "Notes: \n\t" + "Some notes";
+				_notes.BackgroundColor = UIColor.Clear;
+
+				_termsAndConditions.BackgroundColor = UIColor.Clear;
+				_termsAndConditions.Text = "Terms and Conditions: \n\t" + "Much of the legal information on this website consists of summaries of complex legal issues. " +
+					"Legal and factual details and nuances are inevitably omitted from such summaries. Particular circumstances often radically " +
+					"affect the law that applies, and the way that the law applies." +
+				  " You should therefore never apply the legal information to your own situation without conducting additional research or engaging " +
+					" a lawyer. Nor should you assume that all of the relevant legal material is included on our website. ";
+
+				_invoiceTotalTableView.RowHeight = RowHeight;
+				_invoiceTotalTableView.UserInteractionEnabled = false;
+				_invoiceTotalTableView.Source = new InvoiceTotalTableViewSource (values);
+
+				this.View.BringSubviewToFront (TopBorderView);
 			}
 		}
 
@@ -49,13 +78,28 @@ namespace MobileIOS
 
 			if (_viewModel != null)
 			{
+				_payNowButton.TouchDown += NavigateToPaymentSite;
+
 				InvoiceItemsTableView.Layer.BorderColor = UIColor.LightGray.CGColor;
 				InvoiceItemsTableView.Layer.BorderWidth = 1;
 				InvoiceItemsTableView.Layer.CornerRadius = 5;
 
+				_invoiceTotalTableView.Layer.BorderWidth = 1;
+				_invoiceTotalTableView.Layer.BorderColor = UIColor.LightGray.CGColor;
+				_invoiceTotalTableView.Layer.CornerRadius = 5;
+
+				_footerView.Layer.CornerRadius = 5;
+
 				TableViewWidth.Constant = InterfaceOrientation.IsLandscape() ?  
 					this.View.Frame.Width - SplitViewController.PrimaryColumnWidth - 30: 
 					this.View.Frame.Width - 30;
+
+				TotalTableLeft.Constant = (TableViewWidth.Constant / 2) + 30;
+				TotalTableTop.Constant = -7;
+				TotalTableWidth.Constant = (TableViewWidth.Constant / 2) - 15;
+				TotalTableHeight.Constant = RowHeight * 3;
+
+				_invoiceTotalTableView.TableFooterView = new UIView ();
 
 				TableViewHeight.Constant = RowHeight * _viewModel.Invoice.InvoiceItems.Count ();
 
@@ -71,6 +115,14 @@ namespace MobileIOS
 				}
 
 				SetImageConstraints (_viewModel.Invoice.InvoiceType.LogoPosition);
+			}
+		}
+
+		private void NavigateToPaymentSite (object sender, EventArgs args)
+		{
+			if (!string.IsNullOrWhiteSpace (_viewModel.Invoice.PaymentUrl))
+			{
+				UIApplication.SharedApplication.OpenUrl (new NSUrl (_viewModel.Invoice.PaymentUrl));
 			}
 		}
 
@@ -121,6 +173,29 @@ namespace MobileIOS
 			}
 		}
     }
+
+	public class InvoiceTotalTableViewSource : UITableViewSource
+	{
+		IEnumerable<KeyValuePair<string, decimal>> _values;
+
+		public InvoiceTotalTableViewSource (IEnumerable<KeyValuePair<string, decimal>> values)
+		{
+			_values = values;
+		}
+		
+		public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
+		{
+			var value = _values.ElementAt (indexPath.Row);
+			var cell = tableView.DequeueReusableCell ("InvoiceTotalTableViewCell") as InvoiceTotalTableViewCell;
+			cell.UpdateCell (value.Key, value.Value);
+			return cell;
+		}
+
+		public override nint RowsInSection (UITableView tableview, nint section)
+		{
+			return _values.Count ();
+		}
+	}
 
 	public class InvoiceItemsTableViewSource : UITableViewSource
 	{

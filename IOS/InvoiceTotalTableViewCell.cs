@@ -9,5 +9,11 @@ namespace MobileIOS
         public InvoiceTotalTableViewCell (IntPtr handle) : base (handle)
         {
         }
+
+		public void UpdateCell (string title, decimal amount)
+		{
+			_nameLabel.Text = title;
+			_amountTotal.Text = String.Format ("{0:C2}", amount);
+		}
     }
 }

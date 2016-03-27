@@ -48,6 +48,7 @@ namespace Services
 								   AmountDue = invoice.AmountDue,
 								   Company = company,
 								   Customer = customer,
+									TaxPercentage = invoice.TaxPercentage,
 								   CompanyId = company.Id,
 								   CustomerId = customer.Id,
 								   DueDate = invoice.DueDate,
