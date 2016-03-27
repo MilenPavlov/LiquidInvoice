@@ -407,6 +407,7 @@
                         <outlet property="_termsAndConditions" destination="1134" id="name-outlet-1134"/>
                         <outlet property="_notes" destination="1133" id="name-outlet-1133"/>
                         <outlet property="_payNowButton" destination="1161" id="name-outlet-1161"/>
+                        <outlet property="TopBoarderTopConstraint" destination="1082" id="name-outlet-1082"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="68" userLabel="First Responder" sceneMemberID="firstResponder"/>

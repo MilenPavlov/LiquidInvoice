@@ -72,7 +72,6 @@ namespace MobileIOS
 				_invoiceTotalTableView.UserInteractionEnabled = false;
 				_invoiceTotalTableView.Source = new InvoiceTotalTableViewSource (values);
 
-				_invoiceTotalTableView.TableFooterView = new UIView (new CGRect (0, 0, TotalTableWidth.Constant, 50));
 				this.View.BringSubviewToFront (TopBorderView);
 			}
 		}
@@ -106,7 +105,10 @@ namespace MobileIOS
 					this.View.Frame.Width - 30;
 
 				TotalTableLeft.Constant = (TableViewWidth.Constant / 2) + 30;
-				TotalTableTop.Constant = -8;
+
+				// TopBoarder is the white boarder that makes both tables look as one
+				TotalTableTop.Constant = TopBoarderTopConstraint.Constant - 1;
+
 				TotalTableWidth.Constant = (TableViewWidth.Constant / 2) - 15;
 				TotalTableHeight.Constant = RowHeight * 3;
 

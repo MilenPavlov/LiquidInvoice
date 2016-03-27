@@ -80,6 +80,10 @@ namespace MobileIOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.NSLayoutConstraint TopBoarderTopConstraint { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView TopBorderView { get; set; }
 
         [Outlet]
@@ -178,6 +182,11 @@ namespace MobileIOS
             if (TableViewWidth != null) {
                 TableViewWidth.Dispose ();
                 TableViewWidth = null;
+            }
+
+            if (TopBoarderTopConstraint != null) {
+                TopBoarderTopConstraint.Dispose ();
+                TopBoarderTopConstraint = null;
             }
 
             if (TopBorderView != null) {
