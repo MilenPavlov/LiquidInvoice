@@ -188,12 +188,12 @@
     <Compile Include="ViewControllers\ExistingInvoiceViewController.designer.cs">
       <DependentUpon>ExistingInvoiceViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvoiceItemTableViewCell.cs" />
-    <Compile Include="InvoiceItemTableViewCell.designer.cs">
+    <Compile Include="TableViewCells\InvoiceItemTableViewCell.cs" />
+    <Compile Include="TableViewCells\InvoiceItemTableViewCell.designer.cs">
       <DependentUpon>InvoiceItemTableViewCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvoiceTotalTableViewCell.cs" />
-    <Compile Include="InvoiceTotalTableViewCell.designer.cs">
+    <Compile Include="TableViewCells\InvoiceTotalTableViewCell.cs" />
+    <Compile Include="TableViewCells\InvoiceTotalTableViewCell.designer.cs">
       <DependentUpon>InvoiceTotalTableViewCell.cs</DependentUpon>
     </Compile>
   </ItemGroup>

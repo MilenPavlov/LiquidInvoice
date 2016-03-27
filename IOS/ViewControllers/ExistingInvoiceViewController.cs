@@ -36,6 +36,8 @@ namespace MobileIOS
 			{
 				await _viewModel.Start ();
 
+				this.NavigationItem.Title = "Invoice# " + _viewModel.Invoice.InvoiceNumber;
+
 				_companyInfoTextView.Text = _viewModel.Invoice.Company.Name + '\n' +
 					_viewModel.Invoice.Company.Address + ' ' + _viewModel.Invoice.Company.PhoneNumber;
 				_companyInfoTextView.Font = AppDelegate.DefaultFontOfSize(15);

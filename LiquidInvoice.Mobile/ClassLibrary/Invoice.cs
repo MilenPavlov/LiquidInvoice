@@ -17,7 +17,11 @@ namespace ClassLibrary
 
 		public DateTime DueDate { get; set; }
 
+        public DateTime? ViewedUtc { get; set; }
+
 		public string PaymentUrl { get; set; }
+
+		public string InvoiceNumber { get; set; }
 	}
 }
 

@@ -5,6 +5,8 @@ namespace ClassLibrary
 {
 	public class InvoiceDto
 	{
+		public int Id { get; set; }
+
 		public int CompanyId { get; set; }
 
 		public int CustomerId { get; set; }
@@ -15,7 +17,11 @@ namespace ClassLibrary
 
 		public DateTime DueDate { get; set; }
 
-		public string PaymentUrl { get; set; }
+        public DateTime? ViewedUtc { get; set; }
+
+        public string PaymentUrl { get; set; }
+
+		public string InvoiceNumber { get; set; }
 
 		public Company Company { get; set; }
 

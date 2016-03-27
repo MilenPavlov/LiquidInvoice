@@ -13,18 +13,35 @@ namespace ViewModels
 		List<InvoiceDto> _invoices;
 		IDependencyService _dependencyService;
 
+		public InvoiceMenuType MenuType { get; set; }
+
 		public ExistingInvoiceMenuViewModel (IInvoiceService invoiceService, IDependencyService dependencyService)
 		{
 			_dependencyService = dependencyService;
 			_invoiceService = invoiceService;
+			MenuType = InvoiceMenuType.AllInvoices;
 		}
 
 		public event ViewModelNavigationRequestHandler ViewModelNavigationRequested;
 
 		public async Task Start ()
 		{
-			var invoices = await _invoiceService.GetAllInvoices ().ConfigureAwait (false);
-			_invoices = invoices.ToList ();
+			_invoices = (await GetInvoicesByMenuType (MenuType)).ToList();	
+		}
+
+		private async Task<IEnumerable<InvoiceDto>> GetInvoicesByMenuType (InvoiceMenuType menuType)
+		{
+			switch (MenuType)
+			{
+			case InvoiceMenuType.AllInvoices:
+				return await _invoiceService.GetAllInvoices ().ConfigureAwait (false);
+			case InvoiceMenuType.Outstanding:
+				return await _invoiceService.GetAllOverdueInvoices ().ConfigureAwait (false);
+			case InvoiceMenuType.RecentlyViewed:
+				return await _invoiceService.GetRecentlyViewed ().ConfigureAwait (false);
+			}
+
+			return new List<InvoiceDto> ();
 		}
 
 		public void NavigateToInvoice (InvoiceDto invoice)
@@ -46,6 +63,13 @@ namespace ViewModels
 				return _invoices;
 			}
 		}
+	}
+
+	public enum InvoiceMenuType
+	{
+		AllInvoices,
+		Outstanding,
+		RecentlyViewed
 	}
 }
 

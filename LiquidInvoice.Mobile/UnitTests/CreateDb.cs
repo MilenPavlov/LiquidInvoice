@@ -99,6 +99,7 @@ namespace UnitTests
                     InvoiceTypeId = 1,
                     AmountDue = 3934.23m,
                     CompanyId = 1,
+                    InvoiceNumber = Guid.NewGuid().ToString().Substring(0, 10),
                     TaxPercentage = 0.07,
                     CustomerId = 1,
                     DueDate = DateTime.Now,
@@ -109,6 +110,7 @@ namespace UnitTests
                     InvoiceTypeId = 2,
                     AmountDue = 12304.23m,
                     CompanyId = 2,
+                    InvoiceNumber = Guid.NewGuid().ToString().Substring(0, 10),
                     TaxPercentage = 0.07,
                     PaymentUrl = "https://liquidinvoice.com/",
                     CustomerId = 2,
@@ -119,6 +121,7 @@ namespace UnitTests
                      InvoiceTypeId = 2,
                     AmountDue = 879.96m,
                     CompanyId = 3,
+                    InvoiceNumber = Guid.NewGuid().ToString().Substring(0, 10),
                     PaymentUrl = "https://liquidinvoice.com/",
                     TaxPercentage = 0.07,
                     CustomerId = 3,
@@ -194,6 +197,50 @@ namespace UnitTests
                   new InvoiceItem() {
                     InvoiceId = 1,
                     Id = 7,
+                    ItemName = "Parts 5",
+                    Quantity = null,
+                    TotalPrice = 125
+                },
+
+                  new InvoiceItem() {
+                    InvoiceId = 2,
+                    Id = 8,
+                    ItemName = "Parts 3",
+                    Quantity = null,
+                    TotalPrice = 125
+                },
+                  new InvoiceItem() {
+                    InvoiceId = 2,
+                    Id = 9,
+                    ItemName = "Parts 4",
+                    Quantity = null,
+                    TotalPrice = 125
+                },
+                  new InvoiceItem() {
+                    InvoiceId = 2,
+                    Id = 10,
+                    ItemName = "Parts 5",
+                    Quantity = null,
+                    TotalPrice = 125
+                },
+
+                  new InvoiceItem() {
+                    InvoiceId = 3,
+                    Id = 11,
+                    ItemName = "Parts 3",
+                    Quantity = null,
+                    TotalPrice = 125
+                },
+                  new InvoiceItem() {
+                    InvoiceId = 3,
+                    Id = 12,
+                    ItemName = "Parts 4",
+                    Quantity = null,
+                    TotalPrice = 125
+                },
+                  new InvoiceItem() {
+                    InvoiceId = 3,
+                    Id = 13,
                     ItemName = "Parts 5",
                     Quantity = null,
                     TotalPrice = 125

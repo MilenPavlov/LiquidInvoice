@@ -9,20 +9,18 @@ namespace ViewModels
 	public class ExistingInvoiceViewModel : IApplicationViewModel
 	{
 		InvoiceDto _invoice;
-		IEventAggregator _eventAggregator;
+		IInvoiceService _invoiceService;
 
-		public ExistingInvoiceViewModel (IEventAggregator eventAggregator)
+		public ExistingInvoiceViewModel (IInvoiceService invoiceService)
 		{
-			_eventAggregator = eventAggregator;
+			_invoiceService = invoiceService;
 		}
 
 		public event ViewModelNavigationRequestHandler ViewModelNavigationRequested;
 
-		public Task Start ()
+		public async Task Start ()
 		{
-			_eventAggregator.GetEvent<InvoiceViewedEvent> ().Publish (_invoice);
-
-			return Task.FromResult (0);
+			await _invoiceService.UpdateViewedUtc (_invoice.Id);
 		}
 
 		public InvoiceDto Invoice

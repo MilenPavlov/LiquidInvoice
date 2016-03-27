@@ -371,7 +371,7 @@
                                     <constraint id="1092" firstItem="1091" firstAttribute="leading" secondItem="912" secondAttribute="leading" constant="15"/>
                                     <constraint id="1093" firstItem="912" firstAttribute="trailing" secondItem="1091" secondAttribute="trailing" constant="5"/>
                                     <constraint id="1094" firstItem="912" firstAttribute="bottom" secondItem="1091" secondAttribute="bottom" constant="20"/>
-                                    <constraint id="1095" firstItem="1091" firstAttribute="top" secondItem="1056" secondAttribute="bottom" constant="8"/>
+                                    <constraint id="1095" firstItem="1091" firstAttribute="top" secondItem="1056" secondAttribute="bottom" constant="15"/>
                                     <constraint id="1121" firstItem="912" firstAttribute="trailing" secondItem="1120" secondAttribute="trailing" constant="5"/>
                                     <constraint id="1124" firstItem="1120" firstAttribute="top" secondItem="QTQ-sm-rAg" secondAttribute="bottom" constant="14"/>
                                 </constraints>

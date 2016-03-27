@@ -35,8 +35,8 @@ namespace MobileIOS
 			amountDueText.AddAttribute (UIStringAttributeKey.ForegroundColor, UIColor.DarkGray, new NSRange (0, amountDuePrefix.Length));
 			_amountDueLabel.AttributedText = amountDueText;
 
-			string accountNumberPrefix = "Acct#: ";
-			var accountNumberText = new NSMutableAttributedString (accountNumberPrefix + invoice.Company.AccountNumber);
+			string accountNumberPrefix = "Invoice#: ";
+			var accountNumberText = new NSMutableAttributedString (accountNumberPrefix + invoice.InvoiceNumber);
 			accountNumberText.AddAttribute (UIStringAttributeKey.ForegroundColor, UIColor.DarkGray, new NSRange (0, accountNumberPrefix.Length));
 			_accountNumberLabel.AttributedText = accountNumberText;
 		}

@@ -8,6 +8,9 @@ namespace Interfaces
 	public interface IInvoiceService
 	{
 		Task<IEnumerable<InvoiceDto>> GetAllInvoices ();
+		Task<IEnumerable<InvoiceDto>> GetAllOverdueInvoices ();
+		Task<Invoice> UpdateViewedUtc (int invoiceId);
+		Task<IEnumerable<InvoiceDto>> GetRecentlyViewed ();
 	}
 }
 

@@ -32,6 +32,7 @@ namespace ViewModels
 			if (ViewModelNavigationRequested != null)
 			{
 				IApplicationViewModel viewModel = _dependencyService.Resolve<ExistingInvoiceMenuViewModel> ();
+				((ExistingInvoiceMenuViewModel)viewModel).MenuType = InvoiceMenuType.AllInvoices;
 				ViewModelNavigationRequested (viewModel);
 			}
 		}
