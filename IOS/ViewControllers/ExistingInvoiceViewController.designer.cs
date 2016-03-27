@@ -28,23 +28,23 @@ namespace MobileIOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.NSLayoutConstraint ImageViewHeight { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.NSLayoutConstraint ImageViewLeft { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.NSLayoutConstraint ImageViewRight { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.NSLayoutConstraint ImageViewTop { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView InvoiceItemsTableView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.NSLayoutConstraint LogoHeight { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.NSLayoutConstraint LogoLeft { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.NSLayoutConstraint LogoRight { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.NSLayoutConstraint LogoTop { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -71,29 +71,29 @@ namespace MobileIOS
                 _mainScrollView = null;
             }
 
-            if (ImageViewHeight != null) {
-                ImageViewHeight.Dispose ();
-                ImageViewHeight = null;
-            }
-
-            if (ImageViewLeft != null) {
-                ImageViewLeft.Dispose ();
-                ImageViewLeft = null;
-            }
-
-            if (ImageViewRight != null) {
-                ImageViewRight.Dispose ();
-                ImageViewRight = null;
-            }
-
-            if (ImageViewTop != null) {
-                ImageViewTop.Dispose ();
-                ImageViewTop = null;
-            }
-
             if (InvoiceItemsTableView != null) {
                 InvoiceItemsTableView.Dispose ();
                 InvoiceItemsTableView = null;
+            }
+
+            if (LogoHeight != null) {
+                LogoHeight.Dispose ();
+                LogoHeight = null;
+            }
+
+            if (LogoLeft != null) {
+                LogoLeft.Dispose ();
+                LogoLeft = null;
+            }
+
+            if (LogoRight != null) {
+                LogoRight.Dispose ();
+                LogoRight = null;
+            }
+
+            if (LogoTop != null) {
+                LogoTop.Dispose ();
+                LogoTop = null;
             }
 
             if (TableViewHeight != null) {

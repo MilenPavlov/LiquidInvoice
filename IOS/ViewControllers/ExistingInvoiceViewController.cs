@@ -36,11 +36,9 @@ namespace MobileIOS
 					_viewModel.Invoice.Company.Address + '\n' +
 					_viewModel.Invoice.Company.PhoneNumber;
 
-				_companyInfoTextView.SizeToFit ();
-
 				InvoiceItemsTableView.RowHeight = RowHeight;
 				InvoiceItemsTableView.UserInteractionEnabled = false;
-
+				InvoiceItemsTableView.TableFooterView = new UIView ();
 				InvoiceItemsTableView.Source = new InvoiceItemsTableViewSource (_viewModel.Invoice.InvoiceItems);
 			}
 		}
@@ -58,7 +56,6 @@ namespace MobileIOS
 				TableViewWidth.Constant = InterfaceOrientation.IsLandscape() ?  
 					this.View.Frame.Width - SplitViewController.PrimaryColumnWidth - 30: 
 					this.View.Frame.Width - 30;
-
 
 				TableViewHeight.Constant = RowHeight * _viewModel.Invoice.InvoiceItems.Count ();
 
@@ -80,32 +77,34 @@ namespace MobileIOS
 		private void SetImageConstraints (LogoPositionType positionType)
 		{
 			nfloat primaryColumnOffset = InterfaceOrientation.IsLandscape () ? SplitViewController.PrimaryColumnWidth : 0;
+			nfloat logoHeight = 150;
+			nfloat imageOffset = 10;
 
 			switch (positionType)
 			{
 			case LogoPositionType.FullLength:
-				ImageViewHeight.Constant = 150;
-				ImageViewTop.Constant = 0;
-				ImageViewLeft.Constant = 0;
-				ImageViewRight.Constant = 0;
+				LogoHeight.Constant = logoHeight;
+				LogoTop.Constant = imageOffset;
+				LogoLeft.Constant = imageOffset;
+				LogoRight.Constant = imageOffset;
 				break;
 			case LogoPositionType.Left:
-				ImageViewHeight.Constant = 150;
-				ImageViewTop.Constant = 0;
-				ImageViewLeft.Constant = 0;
-				ImageViewRight.Constant = this.View.Frame.Width * 0.75f - primaryColumnOffset;
+				LogoHeight.Constant = logoHeight;
+				LogoTop.Constant = imageOffset;
+				LogoLeft.Constant = imageOffset;
+				LogoRight.Constant = this.View.Frame.Width * 0.75f - primaryColumnOffset;
 				break;
 			case LogoPositionType.Right:
-				ImageViewHeight.Constant = 150;
-				ImageViewTop.Constant = 0;
-				ImageViewRight.Constant = 0;
-				ImageViewLeft.Constant = this.View.Frame.Width * 0.75f - primaryColumnOffset;
+				LogoHeight.Constant = logoHeight;
+				LogoTop.Constant = imageOffset;
+				LogoLeft.Constant = this.View.Frame.Width * 0.75f - primaryColumnOffset;
+				LogoRight.Constant = imageOffset;
 				break;
 			case LogoPositionType.Middle:
-				ImageViewHeight.Constant = 150;
-				ImageViewTop.Constant = 0;
-				ImageViewLeft.Constant = this.View.Frame.Width / 2 - 75 - primaryColumnOffset;
-				ImageViewRight.Constant = this.View.Frame.Width / 2 - 75 - primaryColumnOffset;
+				LogoHeight.Constant = logoHeight;
+				LogoTop.Constant = imageOffset;
+				LogoLeft.Constant = this.View.Frame.Width / 2 - 75 - primaryColumnOffset;
+				LogoRight.Constant = this.View.Frame.Width / 2 - 75 - primaryColumnOffset;
 				break;
 			}
 		}

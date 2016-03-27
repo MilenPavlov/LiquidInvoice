@@ -26,16 +26,10 @@ namespace MobileIOS
 			LogoImageView.AddGestureRecognizer (new UITapGestureRecognizer (() => { 
 				NavigateToDashboard ();
 
-				if (NavigationTableView.IndexPathForSelectedRow != null)
-				{
 					foreach (var index in NavigationTableView.IndexPathsForVisibleRows)
 					{
-						if (NavigationTableView.IndexPathForSelectedRow.Row == index.Row)
-						{
-							NavigationTableView.DeselectRow (index, true);
-						}
+						NavigationTableView.DeselectRow (index, true);
 					}
-				}
 			}));
 
 

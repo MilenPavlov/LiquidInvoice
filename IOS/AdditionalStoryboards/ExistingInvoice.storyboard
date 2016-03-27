@@ -142,17 +142,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="QTQ-sm-rAg">
-                                <rect key="frame" x="0.0" y="64" width="600" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="QWy-oo-JVY"/>
-                                </constraints>
-                            </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="912" showsHorizontalScrollIndicator="NO">
-                                <rect key="frame" x="0.0" y="174" width="600" height="426"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="912" showsHorizontalScrollIndicator="NO" misplaced="YES">
+                                <rect key="frame" x="11" y="77" width="589" height="523"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eJK-dX-bGC">
-                                        <rect key="frame" x="5" y="0.0" width="350" height="80"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eJK-dX-bGC" misplaced="YES">
+                                        <rect key="frame" x="10" y="103" width="350" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="gJc-W1-072"/>
@@ -163,7 +157,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="960">
-                                        <rect key="frame" x="20" y="105" width="560" height="282"/>
+                                        <rect key="frame" x="20" y="290" width="560" height="97"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="560" id="1005"/>
@@ -235,6 +229,12 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="QTQ-sm-rAg" misplaced="YES">
+                                        <rect key="frame" x="3" y="-50" width="566" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="QWy-oo-JVY"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="960" firstAttribute="top" secondItem="eJK-dX-bGC" secondAttribute="bottom" constant="5" id="967"/>
@@ -242,7 +242,10 @@
                                     <constraint firstAttribute="trailing" secondItem="960" secondAttribute="trailing" constant="5" id="969"/>
                                     <constraint firstAttribute="bottom" secondItem="960" secondAttribute="bottom" constant="5" id="970"/>
                                     <constraint firstItem="eJK-dX-bGC" firstAttribute="leading" secondItem="912" secondAttribute="leading" constant="5" id="A61-ea-ZYB"/>
-                                    <constraint firstItem="eJK-dX-bGC" firstAttribute="top" secondItem="912" secondAttribute="top" id="dLb-io-eat"/>
+                                    <constraint id="1018" firstItem="QTQ-sm-rAg" firstAttribute="leading" secondItem="912" secondAttribute="leading"/>
+                                    <constraint id="1019" firstItem="QTQ-sm-rAg" firstAttribute="top" secondItem="912" secondAttribute="top"/>
+                                    <constraint id="1021" firstItem="912" firstAttribute="trailing" secondItem="QTQ-sm-rAg" secondAttribute="trailing"/>
+                                    <constraint id="1027" firstItem="eJK-dX-bGC" firstAttribute="top" secondItem="QTQ-sm-rAg" secondAttribute="bottom"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -251,23 +254,20 @@
                             <constraint firstItem="912" firstAttribute="leading" secondItem="67" secondAttribute="leading" id="913"/>
                             <constraint firstAttribute="trailing" secondItem="912" secondAttribute="trailing" id="914"/>
                             <constraint firstAttribute="bottom" secondItem="912" secondAttribute="bottom" id="915"/>
-                            <constraint firstItem="912" firstAttribute="top" secondItem="QTQ-sm-rAg" secondAttribute="bottom" constant="10" id="928"/>
-                            <constraint firstAttribute="trailing" secondItem="QTQ-sm-rAg" secondAttribute="trailing" id="930"/>
-                            <constraint firstItem="QTQ-sm-rAg" firstAttribute="leading" secondItem="67" secondAttribute="leading" id="931"/>
-                            <constraint firstItem="QTQ-sm-rAg" firstAttribute="top" secondItem="63" secondAttribute="bottom" id="938"/>
+                            <constraint id="1038" firstItem="912" firstAttribute="top" secondItem="67" secondAttribute="top"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ImageViewHeight" destination="QWy-oo-JVY" id="name-outlet-QWy-oo-JVY"/>
-                        <outlet property="ImageViewLeft" destination="931" id="name-outlet-931"/>
-                        <outlet property="ImageViewRight" destination="930" id="name-outlet-930"/>
-                        <outlet property="ImageViewTop" destination="938" id="name-outlet-938"/>
                         <outlet property="InvoiceItemsTableView" destination="960" id="name-outlet-960"/>
                         <outlet property="TableViewWidth" destination="1005" id="name-outlet-1005"/>
                         <outlet property="_companyInfoTextView" destination="eJK-dX-bGC" id="name-outlet-eJK-dX-bGC"/>
-                        <outlet property="_logoImageView" destination="QTQ-sm-rAg" id="name-outlet-QTQ-sm-rAg"/>
                         <outlet property="_mainScrollView" destination="912" id="name-outlet-912"/>
                         <outlet property="TableViewHeight" destination="1011" id="name-outlet-1011"/>
+                        <outlet property="_logoImageView" destination="QTQ-sm-rAg" id="name-outlet-QTQ-sm-rAg"/>
+                        <outlet property="LogoHeight" destination="QWy-oo-JVY" id="name-outlet-QWy-oo-JVY"/>
+                        <outlet property="LogoLeft" destination="1018" id="name-outlet-1018"/>
+                        <outlet property="LogoRight" destination="1021" id="name-outlet-1021"/>
+                        <outlet property="LogoTop" destination="1019" id="name-outlet-1019"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="68" userLabel="First Responder" sceneMemberID="firstResponder"/>

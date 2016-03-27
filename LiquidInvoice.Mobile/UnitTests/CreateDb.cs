@@ -46,7 +46,7 @@ namespace UnitTests
                     Name = "Walmart",
                     Id = 1,
                     PhoneNumber = "928-382-5779",
-                    LogoUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToBhhGyaPanYrQoDXGx3tvFy6OP0nPrGHNN5mJ7wmDwK1KmLVz7FJMstDP"
+                    LogoUrl = "http://vignette1.wikia.nocookie.net/walmart/images/9/92/Walmart_logo.png/revision/latest?cb=20130113164539"
                 },
                 new Company() {
                     AccountNumber = "2A5-F3",
@@ -167,7 +167,7 @@ namespace UnitTests
                   new InvoiceItem() {
                     InvoiceId = 1,
                     Id = 4,
-                    ItemName = "Parts 2",
+                    ItemName = "Part# FYU-765 35 Count Carton",
                     Quantity = null,
                     TotalPrice = 125
                 },
