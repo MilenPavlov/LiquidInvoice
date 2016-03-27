@@ -34,11 +34,11 @@ namespace MobileIOS
 
 			if (_viewModel != null)
 			{
-
 				await _viewModel.Start ();
 
 				_companyInfoTextView.Text = _viewModel.Invoice.Company.Name + '\n' +
 					_viewModel.Invoice.Company.Address + ' ' + _viewModel.Invoice.Company.PhoneNumber;
+				_companyInfoTextView.Font = AppDelegate.DefaultFontOfSize(15);
 
 				InvoiceItemsTableView.RowHeight = RowHeight;
 				InvoiceItemsTableView.UserInteractionEnabled = false;
@@ -56,18 +56,23 @@ namespace MobileIOS
 
 				_notes.Text = "Notes: \n\t" + "Some notes";
 				_notes.BackgroundColor = UIColor.Clear;
+				_notes.Font = AppDelegate.DefaultFontOfSize(15);
 
+				_termsAndConditions.Font = AppDelegate.DefaultFontOfSize(15);
 				_termsAndConditions.BackgroundColor = UIColor.Clear;
-				_termsAndConditions.Text = "Terms and Conditions: \n\t" + "Much of the legal information on this website consists of summaries of complex legal issues. " +
+				_termsAndConditions.Text = "Terms and Conditions: \n\t" + 
+					"Much of the legal information on this website consists of summaries of complex legal issues. " +
 					"Legal and factual details and nuances are inevitably omitted from such summaries. Particular circumstances often radically " +
 					"affect the law that applies, and the way that the law applies." +
 				  " You should therefore never apply the legal information to your own situation without conducting additional research or engaging " +
 					" a lawyer. Nor should you assume that all of the relevant legal material is included on our website. ";
 
+				_invoiceTotalTableView.BackgroundColor = UIColor.Clear;
 				_invoiceTotalTableView.RowHeight = RowHeight;
 				_invoiceTotalTableView.UserInteractionEnabled = false;
 				_invoiceTotalTableView.Source = new InvoiceTotalTableViewSource (values);
 
+				_invoiceTotalTableView.TableFooterView = new UIView (new CGRect (0, 0, TotalTableWidth.Constant, 50));
 				this.View.BringSubviewToFront (TopBorderView);
 			}
 		}
@@ -78,6 +83,12 @@ namespace MobileIOS
 
 			if (_viewModel != null)
 			{
+				var buttonTitle = new NSAttributedString("Pay Now", new UIStringAttributes() {
+					Font = AppDelegate.DefaultFontOfSize(17)
+				});
+
+				_payNowButton.SetAttributedTitle(buttonTitle, UIControlState.Normal);
+				_payNowButton.SetAttributedTitle(buttonTitle, UIControlState.Focused);
 				_payNowButton.TouchDown += NavigateToPaymentSite;
 
 				InvoiceItemsTableView.Layer.BorderColor = UIColor.LightGray.CGColor;
@@ -95,13 +106,16 @@ namespace MobileIOS
 					this.View.Frame.Width - 30;
 
 				TotalTableLeft.Constant = (TableViewWidth.Constant / 2) + 30;
-				TotalTableTop.Constant = -7;
+				TotalTableTop.Constant = -8;
 				TotalTableWidth.Constant = (TableViewWidth.Constant / 2) - 15;
 				TotalTableHeight.Constant = RowHeight * 3;
 
 				_invoiceTotalTableView.TableFooterView = new UIView ();
 
-				TableViewHeight.Constant = RowHeight * _viewModel.Invoice.InvoiceItems.Count ();
+				if (_viewModel.Invoice.InvoiceItems.Any ())
+				{
+					TableViewHeight.Constant = RowHeight * _viewModel.Invoice.InvoiceItems.Count ();
+				}
 
 				_logoImageView.SetImage(new NSUrl(_viewModel.Invoice.Company.LogoUrl));
 
@@ -187,6 +201,7 @@ namespace MobileIOS
 		{
 			var value = _values.ElementAt (indexPath.Row);
 			var cell = tableView.DequeueReusableCell ("InvoiceTotalTableViewCell") as InvoiceTotalTableViewCell;
+
 			cell.UpdateCell (value.Key, value.Value);
 			return cell;
 		}
@@ -210,6 +225,7 @@ namespace MobileIOS
 		{
 			var cell = tableView.DequeueReusableCell ("InvoiceItemTableViewCell") as InvoiceItemTableViewCell;
 			cell.UpdateCell (_items.ElementAt (indexPath.Row));
+
 			return cell;
 		}
 

@@ -15,6 +15,11 @@ namespace MobileIOS
 
 		private static IDependencyService _dependencyService;
 
+		public static UIFont DefaultFontOfSize (int size)
+		{
+			return UIFont.FromName ("ChalkboardSE-Light", size);
+		}
+
 		public override UIWindow Window
 		{
 			get;
@@ -34,10 +39,16 @@ namespace MobileIOS
 			// Override point for customization after application launch.
 			// If not required for your application you can safely delete this method
 
+
+			UILabel.Appearance.Font = UIFont.FromName ("ChalkboardSE-Light", 17);
+			UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes() {
+				Font = DefaultFontOfSize(17),
+				TextShadowColor = UIColor.Clear
+			}); 
+
 			// register dependency service as singleton
 			_dependencyService = new DependencyService();
 			_dependencyService.RegisterInstance<IDependencyService> (_dependencyService);
-
 
 			// view models and any platform dependent classes will be registered here
 			_dependencyService.RegisterType<NavigationMenuViewModel, NavigationMenuViewModel> ();

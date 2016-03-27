@@ -112,6 +112,7 @@ namespace MobileIOS
 		{
 			var cell = new UITableViewCell (UITableViewCellStyle.Default, null);
 			cell.TextLabel.Text = _actions.ElementAt (indexPath.Row).Key;
+			cell.TextLabel.Font = AppDelegate.DefaultFontOfSize (17);
 			return cell;
 		}
 

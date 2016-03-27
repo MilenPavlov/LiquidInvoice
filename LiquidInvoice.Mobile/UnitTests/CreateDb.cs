@@ -58,7 +58,7 @@ namespace UnitTests
                 },
                 new Company() {
                     AccountNumber = "105-LL39",
-                    Address = "3135 Easton Turnpike	Fairfield, Connecticut",
+                    Address = "3135 Easton Turnpike Fairfield, Connecticut",
                     Name = "General Electric",
                     Id = 3,
                     PhoneNumber = "913-806-1173",
@@ -102,6 +102,7 @@ namespace UnitTests
                     TaxPercentage = 0.07,
                     CustomerId = 1,
                     DueDate = DateTime.Now,
+                    PaymentUrl = "https://liquidinvoice.com/",
                     Id = 1
                 },
                 new Invoice() {
@@ -109,6 +110,7 @@ namespace UnitTests
                     AmountDue = 12304.23m,
                     CompanyId = 2,
                     TaxPercentage = 0.07,
+                    PaymentUrl = "https://liquidinvoice.com/",
                     CustomerId = 2,
                     DueDate = DateTime.Now.AddDays(5),
                     Id = 2
@@ -117,6 +119,7 @@ namespace UnitTests
                      InvoiceTypeId = 2,
                     AmountDue = 879.96m,
                     CompanyId = 3,
+                    PaymentUrl = "https://liquidinvoice.com/",
                     TaxPercentage = 0.07,
                     CustomerId = 3,
                     DueDate = DateTime.Now.AddDays(-5),

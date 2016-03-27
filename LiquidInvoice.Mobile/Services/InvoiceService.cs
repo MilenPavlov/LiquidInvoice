@@ -51,6 +51,7 @@ namespace Services
 									TaxPercentage = invoice.TaxPercentage,
 								   CompanyId = company.Id,
 								   CustomerId = customer.Id,
+									PaymentUrl = invoice.PaymentUrl,
 								   DueDate = invoice.DueDate,
 								   InvoiceType = invoiceType,
 									InvoiceItems = invoiceItems.ResultData.Where(ii => ii.InvoiceId == invoice.Id)
