@@ -13,7 +13,7 @@ namespace MobileIOS
         }
 
 
-		public async override void ViewDidLoad ()
+		public override void ViewDidLoad ()
 		{
 			try
 			{

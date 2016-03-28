@@ -75,7 +75,8 @@ namespace MobileIOS
 
 		private void NavigateToNewInvoice ()
 		{
-			var viewController = Storyboard.InstantiateViewController ("NewInvoiceNavigationController");
+			var storyboard = UIStoryboard.FromName ("NewInvoice", null);
+			var viewController = storyboard.InstantiateViewController ("NewInvoiceNavigationController");
 			this.ShowDetailViewController (viewController, this);
 		}
 

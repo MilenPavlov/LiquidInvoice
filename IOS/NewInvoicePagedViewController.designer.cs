@@ -11,8 +11,8 @@ using UIKit;
 
 namespace MobileIOS
 {
-    [Register ("NewInvoiceViewController")]
-    partial class NewInvoiceViewController
+    [Register ("NewInvoicePagedViewController")]
+    partial class NewInvoicePagedViewController
     {
         void ReleaseDesignerOutlets ()
         {

@@ -117,6 +117,7 @@
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="AdditionalStoryboards\Reports.storyboard" />
     <InterfaceDefinition Include="AdditionalStoryboards\ExistingInvoice.storyboard" />
+    <InterfaceDefinition Include="AdditionalStoryboards\NewInvoice.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -142,14 +143,6 @@
     <Compile Include="ViewControllers\NavigationViewController.cs" />
     <Compile Include="ViewControllers\NavigationViewController.designer.cs">
       <DependentUpon>NavigationViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NavigationControllers\NewInvoiceNavigationController.cs" />
-    <Compile Include="NavigationControllers\NewInvoiceNavigationController.designer.cs">
-      <DependentUpon>NewInvoiceNavigationController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\NewInvoiceViewController.cs" />
-    <Compile Include="ViewControllers\NewInvoiceViewController.designer.cs">
-      <DependentUpon>NewInvoiceViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewControllers\ReportMenuViewController.cs" />
     <Compile Include="ViewControllers\ReportMenuViewController.designer.cs">
@@ -183,6 +176,18 @@
     <Compile Include="TableViewCells\InvoiceTotalTableViewCell.cs" />
     <Compile Include="TableViewCells\InvoiceTotalTableViewCell.designer.cs">
       <DependentUpon>InvoiceTotalTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewInvoiceNavigationController.cs" />
+    <Compile Include="NewInvoiceNavigationController.designer.cs">
+      <DependentUpon>NewInvoiceNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewInvoicePagedViewController.cs" />
+    <Compile Include="NewInvoicePagedViewController.designer.cs">
+      <DependentUpon>NewInvoicePagedViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetupInvoiceViewController.cs" />
+    <Compile Include="SetupInvoiceViewController.designer.cs">
+      <DependentUpon>SetupInvoiceViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

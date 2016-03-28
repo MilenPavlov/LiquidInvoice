@@ -44,7 +44,7 @@ namespace MobileIOS
 			UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes() {
 				Font = DefaultFontOfSize(17),
 				TextShadowColor = UIColor.Clear
-			}); 
+			});
 
 			// register dependency service as singleton
 			_dependencyService = new DependencyService();
